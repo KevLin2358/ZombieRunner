@@ -9,7 +9,8 @@ This is a 2D platformer where the player is running for their life. The object o
     <li>Players are able to control the character with WASD and spacebar</li>
     <li>Players are able to collect powerups to slow the incoming zombie horde</li>
     <li>PLayers must avoid touching the zombies</li>
-    <li>Zombie </li>
+    <li>Zombie horde will be coming from the left.</li>
+    <br>
     <span>In addition, this project will include:</span>
     <li>A production README</li>
 </ul>
