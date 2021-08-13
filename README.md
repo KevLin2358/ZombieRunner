@@ -14,7 +14,7 @@ This is a 2D platformer where the player is running for their life. The object o
     <span>In addition, this project will include:</span>
     <li>A production README</li>
 </ul>
-<img src = "/Users/kevinlin/Desktop" style ="height: 500px; width:1024px;">
+<img src = "Screen Shot 2021-08-12 at 10.01.39 PM.png" style ="height: 500px; width:1024px;">
 
 <ul>
     <li>Nav links to the project's Github repo, and others.</li>
