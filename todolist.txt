@@ -1,3 +1,18 @@
 - logic for player movement, zombie movement and collision
 - graphics
 - player input
+
+
+Friday 
+    - Player logic
+Saturday
+    - Game logic has to be done
+Sunday
+    -
+    - 
+
+
+game
+// render enemy, player and platform
+// game loop
+// player touch enemy = lose
