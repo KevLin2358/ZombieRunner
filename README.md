@@ -30,11 +30,11 @@ This is a 2D platformer where the player is running for their life. The object o
 <h2>Implementation Timeline</h2>
 <ul>
     <h3>Friday Afternoon and Weekend: </h3>
-    <li>Get the character models, background canvas, platform image ready. </li>
-    <h3>Monday: </h3>
     <li>Get the canvas up and running. Start getting the game logic in place for character movement and zombie movement.</li>
-    <h3>Tuesday: </h3>
+    <h3>Monday: </h3>
     <li>Make sure all the core gameplay is setup and running with no errors. If everything is good, I will be able to start styling the webpage to make it look clean.</li>
+    <h3>Tuesday: </h3>
+    <li>Get the character models, background canvas, platform image ready. </li>
     <h3>Wednesday: </h3>
     <li>If I finished styling the game, I can start implementing power ups to make the gameplay more fun.</li>
     <h3>Thursday Morning:</h3>
