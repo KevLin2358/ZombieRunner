@@ -1,8 +1,8 @@
 <h2>Background</h2>
-This is a 2D platformer where the player is running for their life. The object of this game will be to reach the end goal without touching the darkness.
+This is a 2D platformer where the player is running for their life. The object of this game will be to reach the end goal without touching the zombies.
 
 1) If the zombies touch the player, the player will lose.
-2) The zombie horde will be constantly moving from the left forcing the player to move.
+2) The zombie horde will be constantly moving from the left forcing the player to move the right.
 
 <h2>Functionality & MVPs</h2>
 <ul>
@@ -14,7 +14,7 @@ This is a 2D platformer where the player is running for their life. The object o
     <span>In addition, this project will include:</span>
     <li>A production README</li>
 </ul>
-<img src = "Screen Shot 2021-08-12 at 10.01.39 PM.png" style ="height: 500px; width:1024px;">
+<img src = "wire.png" style ="height: 500px; width:1024px;">
 
 <ul>
     <li>Nav links to the project's Github repo, and others.</li>

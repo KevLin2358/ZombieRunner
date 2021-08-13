@@ -1,0 +1,3 @@
+- logic for player movement, zombie movement and collision
+- graphics
+- player input
