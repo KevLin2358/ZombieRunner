@@ -45,4 +45,5 @@ This is a 2D platformer where the player is running for their life. The object o
 <ul>
     <span>Some anticipated features are: </span>
     <li>Every time the player wins, they get currency to improve skills or get boosts that will help them in their future runs.</li>
+    <li>Zombie obstacles that will give the game more complexity.</li>
 </ul>
