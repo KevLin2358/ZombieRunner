@@ -1,5 +1,5 @@
 // player object
-pOb = {
+let pOb = {
     x : 0,
     y : 450,
     x_v: 0,
@@ -14,42 +14,67 @@ pOb = {
 
 // player class and functions
 class Player {
-    constructor(ctx){
+    constructor(canvas,ctx){
         this.ctx = ctx;
-        this.update();
-        canvas.addEventListener("keypress", update);
+        this.canvas = canvas;
+        rightPressed = false;
+        leftPressed = false;
+        spacePressed = false;
+        addEventListener('keydown', this.keyDownHandler, false);
+        addEventListener('keyup', this.keyUpHandler, false);
+        setInterval(this.update(),1000);
     }
+    // move player
+    // // event.keycode == 32 // space jump
+    keyDownHandler(event) {
+        if(event.keyCode == 68) {
+            this.rightPressed = true;
+            console.log(`right ${this.rightPressed}`);
+        }
+        else if(event.keyCode == 65) {
+            this.leftPressed = true;
+            console.log(`left ${this.leftPressed}`);
+        }
+        else if(event.keyCode == 32) {
+            this.spacePressed = true;
+            console.log(`space ${this.spacePressed}`);
+        }
+    }
+
+    keyUpHandler(event) {
+        if(event.keyCode == 68) {
+            this.rightPressed = false;
+            console.log(`right ${this.rightPressed}`);
+        }
+        else if(event.keyCode == 65) {
+            this.leftPressed = false;
+            console.log(`left ${this.leftPressed}`);
+        }
+        else if(event.keyCode == 32) {
+            this.spacePressed = false;
+            console.log(`space ${this.spacePressed}`);
+        }
+    }
+
     update(){
-        if (keyCode == 38)
-        {
-            y -= speed; //going up
+        console.log('update called');
+        if(this.rightPressed){
+            pOb.x += pOb.speed * 10;
+            console.log(p0b.x);
         }
-        if (keyCode == 40)
-        {
-            y += speed; //going down
+        else if(this.leftPressed){
+            pOb.y -= pOb.speed * 10;
+            console.log(p0b.y);
         }
-        if (keyCode == 37)
-        {
-            x -= speed; //going left
-        }
-        if (keyCode == 39)
-        {
-            x += speed; //going right
-        }
-        this.drawPlayer(this.ctx);
+        this.drawPlayer();
+        console.log('update render');
     }
 
     drawPlayer() {
         this.ctx.clearRect(pOb.x, pOb.y, pOb.width, pOb.height);
         this.ctx.fillStyle = pOb.color;
         this.ctx.fillRect(pOb.x, pOb.y, pOb.width, pOb.height);
+        console.log("refresh");
     }
-
-    // move player
-    // event.keycode == 65 // a left
-    // event.keycode == 87 // w  up
-    // event.keycode == 68 // d right
-    // event.keycode == 83 // s down
-    // event.keycode == 32 // space jump
 }
 module.exports = Player;

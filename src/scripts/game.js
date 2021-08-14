@@ -4,8 +4,8 @@
 const Player = require("./player");
 const Platforms = require("./platform");
 class Game{
-    constructor(ctx){
-        const player = new Player(ctx);
+    constructor(canvas, ctx){
+        const player = new Player(canvas, ctx);
         const platforms = new Platforms(ctx);
     }
 }
