@@ -4,12 +4,12 @@ class Player {
         // canvas properties
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
-        this.ground = 445;
+        this.ground = this.canvasHeight - this.height - 30;
         //player object
         
         //starting position
         this.x = 0; // starting position x axis
-        this.y = this.ground; //starting position y axis
+        this.y = 445; //starting position y axis
 
         this.color = '#FCA738';
         this.width = 25; // player 
@@ -22,20 +22,20 @@ class Player {
         //jumping logic
         this.is_jump = false; // default false
         this.in_air = 0; 
-        this.gravity = 15;
+        this.gravity = 0.9;
         this.jumpHeight = -15;
     }
 
     moveLeft(){
-        console.log("move left");
+        // console.log("move left");
         this.speed = -this.maxSpeed;
-        console.log(this.x);
+        // console.log(this.x);
     }
 
     moveRight(){
-        console.log("move right");
+        // console.log("move right");
         this.speed = this.maxSpeed;
-        console.log(this.x);
+        // console.log(this.x);
     }
 
     //reset speed
@@ -65,15 +65,23 @@ class Player {
 
     movePlayer(){
         this.x += this.speed;
+        this.in_air += this.gravity;
         this.y += this.in_air;
 
-        //left and right side constraint
+        //side constraint
         if(this.x < 0){
             this.x = 0;
-        }else if((this.x + this.width) > this.canvasWidth){
-            this.x = this.canvasWidth - this.width;
         }
 
+        if((this.x + this.width) > this.canvasWidth){
+            this.x = this.canvasWidth - this.width;
+        }
+        
+        // ground constraint
+        if(this.y > this.canvasHeight - 30 - this.height){
+            this.y = this.canvasHeight - 30 - this.height;
+            this.is_jump = false;
+        }
     }
 
 }

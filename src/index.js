@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let player = new Player(canvasWidth, canvasHeight);
     let platforms = new Platforms();
     new Controller(player);
-    loop();
+    requestAnimationFrame(loop);
 
     function loop(){
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
