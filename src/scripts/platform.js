@@ -1,3 +1,15 @@
+class Platforms{
+    constructor(ctx){
+        this.ctx = ctx;
+    }
+
+    drawPlatforms(){
+            for (var i = 0; i < plat.length; i++) {
+                this.ctx.fillStyle = plat[i].color;
+                this.ctx.fillRect(plat[i].x, plat[i].y, plat[i].width, plat[i].height);
+            }
+    }
+}
 // Platform Objects
 ground ={
     x: 0,
@@ -42,19 +54,5 @@ plat4 ={
 let plat = [];
 plat.push(ground, plat1, plat2, plat3, plat4);
 
-// platform class with functions
-class Platforms{
-    constructor(ctx){
-        this.ctx = ctx;
-        this.drawPlatforms();
-    }
-
-    drawPlatforms(){
-            for (var i = 0; i < plat.length; i++) {
-                this.ctx.fillStyle = plat[i].color;
-                this.ctx.fillRect(plat[i].x, plat[i].y, plat[i].width, plat[i].height);
-            }
-    }
-}
 
 module.exports = Platforms;

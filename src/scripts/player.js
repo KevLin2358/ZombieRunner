@@ -1,5 +1,5 @@
 // player object
-let pOb = {
+pOb = {
     x : 0,
     y : 450,
     x_v: 0,
@@ -17,64 +17,56 @@ class Player {
     constructor(canvas,ctx){
         this.ctx = ctx;
         this.canvas = canvas;
-        rightPressed = false;
-        leftPressed = false;
-        spacePressed = false;
-        addEventListener('keydown', this.keyDownHandler, false);
-        addEventListener('keyup', this.keyUpHandler, false);
-        setInterval(this.update(),1000);
+        this.rightPressed = false;
+        this.leftPressed = false;
+        this.spacePressed = false;
+        document.addEventListener('keydown', this.keyDownHandler,false);
+        document.addEventListener('keyup', this.keyUpHandler,false);
     }
     // move player
-    // // event.keycode == 32 // space jump
     keyDownHandler(event) {
         if(event.keyCode == 68) {
             this.rightPressed = true;
-            console.log(`right ${this.rightPressed}`);
+            // console.log(`right ${this.rightPressed}`);
         }
         else if(event.keyCode == 65) {
             this.leftPressed = true;
-            console.log(`left ${this.leftPressed}`);
+            // console.log(`left ${this.leftPressed}`);
         }
         else if(event.keyCode == 32) {
             this.spacePressed = true;
-            console.log(`space ${this.spacePressed}`);
+            // console.log(`space ${this.spacePressed}`);
         }
     }
 
     keyUpHandler(event) {
         if(event.keyCode == 68) {
             this.rightPressed = false;
-            console.log(`right ${this.rightPressed}`);
+            // console.log(pOb.x);
         }
         else if(event.keyCode == 65) {
             this.leftPressed = false;
-            console.log(`left ${this.leftPressed}`);
+            // console.log(pOb.x);
         }
         else if(event.keyCode == 32) {
             this.spacePressed = false;
-            console.log(`space ${this.spacePressed}`);
-        }
-    }
 
-    update(){
-        console.log('update called');
-        if(this.rightPressed){
-            pOb.x += pOb.speed * 10;
-            console.log(p0b.x);
         }
-        else if(this.leftPressed){
-            pOb.y -= pOb.speed * 10;
-            console.log(p0b.y);
-        }
-        this.drawPlayer();
-        console.log('update render');
     }
 
     drawPlayer() {
+        console.log(this.leftPressed, pOb.x);
         this.ctx.clearRect(pOb.x, pOb.y, pOb.width, pOb.height);
+        if(this.leftPressed){
+            console.log(`moved left`);
+            pOb.x -= pOb.speed;
+        } else if(this.rightPressed){
+            console.log(`moved right`);
+            pOb.x += pOb.speed;
+        }
         this.ctx.fillStyle = pOb.color;
         this.ctx.fillRect(pOb.x, pOb.y, pOb.width, pOb.height);
-        console.log("refresh");
+        // requestAnimationFrame(this.drawPlayer.bind(this));
     }
 }
 module.exports = Player;

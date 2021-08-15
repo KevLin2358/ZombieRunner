@@ -1,6 +1,4 @@
 const Game = require("./scripts/game");
-const Platforms = require("./scripts/platform");
-const Player = require("./scripts/player");
 // const View = require("./view");
 
 document.addEventListener("DOMContentLoaded", () => {
