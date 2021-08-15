@@ -22,7 +22,7 @@ class Player {
         //jumping logic
         this.is_jump = false; // default false
         this.in_air = 0; 
-        this.gravity = 0.9;
+        this.gravity = 0.95;
         this.jumpHeight = -15;
     }
 
