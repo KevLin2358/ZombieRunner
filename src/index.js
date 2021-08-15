@@ -5,9 +5,9 @@ const Controller = require("./scripts/controller");
 document.addEventListener("DOMContentLoaded", () => {
     let canvas = document.getElementById('canvas1');
     let ctx = canvas.getContext('2d');
-
     const canvasWidth = 1000;
     const canvasHeight = 500;
+
 
     let player = new Player(canvasWidth, canvasHeight);
     let platforms = new Platforms();
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loop();
 
     function loop(){
-        console.log("loop");
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         platforms.drawPlatforms(ctx);
+        player.movePlayer();
         player.drawPlayer(ctx);
-
-        // requestAnimationFrame(loop);
+        requestAnimationFrame(loop);
     }
 });
