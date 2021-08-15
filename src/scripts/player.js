@@ -8,7 +8,7 @@ class Player {
         //player object
         
         //starting position
-        this.x = 0; // starting position x axis
+        this.x = 50; // starting position x axis
         this.y = 445; //starting position y axis
 
         this.color = '#FCA738';
@@ -40,19 +40,16 @@ class Player {
 
     //reset speed
     stop(){
-        console.log("stop");
         this.speed = 0;
     }
     
     jump(){
-        console.log("jump");
         if(this.is_jump){
             this.in_air = this.jumpHeight;
         }
     }
 
     fall(){
-        console.log("fall");
         if(this.is_jump){
             this.in_air += this.gravity;
         }

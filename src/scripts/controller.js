@@ -12,7 +12,7 @@ class Controller{
                     break;
 
                 case 32: // spacebar for jump
-                console.log("space down");
+                // console.log("space down");
                     if(!player.is_jump){
                         player.is_jump = true;
                         player.jump();
@@ -38,7 +38,7 @@ class Controller{
                     break;
 
                 case 32: // spacebar for jump
-                console.log("space up");
+                // console.log("space up");
                     if(player.in_air < 0) {
                         player.fall();
                     }
