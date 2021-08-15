@@ -1,72 +1,61 @@
-// player object
-pOb = {
-    x : 0,
-    y : 450,
-    x_v: 0,
-    y_v: 0,
-    speed: 5,
-    jump: true,
-    width: 25,
-    height: 25,
-    color: '#FCA738',
-
-};
-
 // player class and functions
 class Player {
-    constructor(canvas,ctx){
-        this.ctx = ctx;
-        this.canvas = canvas;
-        this.rightPressed = false;
-        this.leftPressed = false;
-        this.spacePressed = false;
-        document.addEventListener('keydown', this.keyDownHandler,false);
-        document.addEventListener('keyup', this.keyUpHandler,false);
+    constructor(canvasWidth, canvasHeight){
+        //player object
+
+        //starting position
+        this.x = 0; // starting position x axis
+        this.y = 450; //starting position y axis
+
+        this.color = '#FCA738';
+        this.width = 25; // player 
+        this.height = 25; // player
+
+        // moving logic
+        this.speed = 0; // starting speed
+        this.maxSpeed = 5; // increment speed 
+
+        //jumping logic
+        this.is_jump = false; // default false
+        this.in_air = 0; 
+        this.gravity = 0.5;
+        this.jumpSpeed = -15;
     }
-    // move player
-    keyDownHandler(event) {
-        if(event.keyCode == 68) {
-            this.rightPressed = true;
-            // console.log(`right ${this.rightPressed}`);
-        }
-        else if(event.keyCode == 65) {
-            this.leftPressed = true;
-            // console.log(`left ${this.leftPressed}`);
-        }
-        else if(event.keyCode == 32) {
-            this.spacePressed = true;
-            // console.log(`space ${this.spacePressed}`);
+
+    moveLeft(){
+        console.log("move left");
+        this.speed = -this.maxSpeed;
+    }
+
+    moveRight(){
+        console.log("move right");
+        this.speed = this.maxSpeed;
+    }
+
+    //reset speed
+    stop(){
+        console.lop("stop");
+        this.speed = 0;
+    }
+    
+    jump(){
+        console.lop("jump");
+        if(this.is_jump){
+            this.in_air = this.jumpSpeed;
         }
     }
 
-    keyUpHandler(event) {
-        if(event.keyCode == 68) {
-            this.rightPressed = false;
-            // console.log(pOb.x);
-        }
-        else if(event.keyCode == 65) {
-            this.leftPressed = false;
-            // console.log(pOb.x);
-        }
-        else if(event.keyCode == 32) {
-            this.spacePressed = false;
-
+    fall(){
+        console.log("fall");
+        if(this.is_jump){
+            this.in_air += this.gravity;
         }
     }
 
-    drawPlayer() {
-        console.log(this.leftPressed, pOb.x);
-        this.ctx.clearRect(pOb.x, pOb.y, pOb.width, pOb.height);
-        if(this.leftPressed){
-            console.log(`moved left`);
-            pOb.x -= pOb.speed;
-        } else if(this.rightPressed){
-            console.log(`moved right`);
-            pOb.x += pOb.speed;
-        }
-        this.ctx.fillStyle = pOb.color;
-        this.ctx.fillRect(pOb.x, pOb.y, pOb.width, pOb.height);
-        // requestAnimationFrame(this.drawPlayer.bind(this));
+    drawPlayer(ctx){
+        ctx.fillStyle = 'orange';
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+
 }
 module.exports = Player;

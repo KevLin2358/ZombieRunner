@@ -1,13 +1,12 @@
 class Platforms{
-    constructor(ctx){
-        this.ctx = ctx;
+    constructor(){
     }
 
-    drawPlatforms(){
-            for (var i = 0; i < plat.length; i++) {
-                this.ctx.fillStyle = plat[i].color;
-                this.ctx.fillRect(plat[i].x, plat[i].y, plat[i].width, plat[i].height);
-            }
+    drawPlatforms(ctx){
+        for (var i = 0; i < plat.length; i++) {
+            ctx.fillStyle = plat[i].color;
+            ctx.fillRect(plat[i].x, plat[i].y, plat[i].width, plat[i].height);
+        }
     }
 }
 // Platform Objects
