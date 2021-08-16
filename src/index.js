@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Controller(player);
 
     requestAnimationFrame(loop);
-
+    
     function loop(){
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         platforms.drawPlatforms(ctx);
@@ -25,6 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
         zombie.drawZombie(ctx);
         player.movePlayer();
         player.drawPlayer(ctx);
+        collisionDetection(player,zombie);
         requestAnimationFrame(loop);
     }
+
+    function collisionDetection(obj1, obj2){
+        //console.log(obj2.constructor === Zombie) to check if object is Zombie / platform
+        debugger
+        if(obj1.x < obj2.x + obj2.width && 
+           obj1.x + obj1.width > obj2.x &&
+           obj1.y < obj2.y + obj2.height &&
+           obj1.y + obj1.height > obj2.y
+        ){
+            console.log("collision");
+        }
+    }
+
+
 });

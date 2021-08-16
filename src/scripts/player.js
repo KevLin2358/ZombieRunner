@@ -49,12 +49,6 @@ class Player {
         }
     }
 
-    fall(){
-        if(this.is_jump){
-            this.in_air += this.gravity;
-        }
-    }
-
     drawPlayer(ctx){
         ctx.fillStyle = 'orange';
         ctx.fillRect(this.x, this.y, this.width, this.height);

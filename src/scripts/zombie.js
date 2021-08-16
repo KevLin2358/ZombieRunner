@@ -7,7 +7,7 @@ class Zombie {
         this.y_v= 0;
         this.width= 25;
         this.height= 75;
-        this.speed = 1;
+        this.speed = 2;
         this.direction = "right";
     }
 

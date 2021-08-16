@@ -26,22 +26,17 @@ class Controller{
                 case 68: // d button to move right
                     if (player.speed > 0) {
                         player.stop();
-                        player.fall();
                     }
                     break;
                     
                 case 65: // a button to move left
                     if (player.speed < 0) {
                         player.stop();
-                        player.fall();
                     }
                     break;
 
                 case 32: // spacebar for jump
                 // console.log("space up");
-                    if(player.in_air < 0) {
-                        player.fall();
-                    }
                     break;
             }
         });
