@@ -1,14 +1,33 @@
 class Zombie {
     // zombie object to create
-    constructor(x,y){
-        this.x = x;
-        this.y = y;
-        this.x_v= 0;
-        this.y_v= 0;
+    constructor(){ // 
         this.width= 25;
         this.height= 75;
-        this.speed = 2;
-        this.direction = "right";
+
+        // start point
+        this.x = 1000;
+        this.y = 445;
+
+        // end point 
+        this.xEnd = this.x + this.width;
+        this.yEnd = this.y + this.height;
+
+        //coordinates
+        // (1,0)  (1,1)
+        // (0,0)  (0,1)
+        
+        // (0,0)
+        this.zz = {x: this.x, y: this.y}; 
+        // (0,1)
+        this.zo = {x: this.x, y: this.yEnd }
+        // (1,0)
+        this.oz = {x: this.xEnd, y: this.y}
+        // (1,1)
+        this.oo = {x: this.xEnd, y: this.yEnd}
+        
+        this.speed = 5;
+        this.direction = "left";
+        this.spawn = this.x - this.width;
     }
 
     drawZombie(ctx){
@@ -21,8 +40,13 @@ class Zombie {
     }
 
     moveRight(){
-        this.x += this.speed
+        this.x += this.speed;
     }
+
+    random(min, max){
+        return Math.random() * (max - min) + min;
+    }
+
     moveZombie(canvasWidth){
         if(this.direction == "right"){
             this.moveRight();
@@ -43,7 +67,6 @@ class Zombie {
             this.direction = "left";
         }
     }
-
 }
 
 module.exports = Zombie;

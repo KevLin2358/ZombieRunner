@@ -1,24 +1,36 @@
 class Platforms{
-    constructor(){}
+    constructor(x,y,width,height,color){
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
 
     drawPlatforms(ctx){
-        for (var i = 0; i < plat.length; i++) {
-            ctx.fillStyle = plat[i].color;
-            ctx.fillRect(plat[i].x, plat[i].y, plat[i].width, plat[i].height);
-        }
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+    
 }
-// Platform Objects
-ground ={
-    x: 0,
-    y: 470,
-    width: 1000,
-    height: 30,
-    color: '#155261'
-};
 
-let plat = [];
-plat.push(ground);
+// plat = [];
+// // Platform Objects
+// plat.push (ground = {
+//     x: 0,
+//     y: 470,
+//     width: 1000,
+//     height: 30,
+//     color: '#155261'
+// });
+
+// plat.push(plat1 ={
+//     x: 350,
+//     y: 400,
+//     width: 100,
+//     height: 10,
+//     color: 'brown'
+// })
 
 
 module.exports = Platforms;
