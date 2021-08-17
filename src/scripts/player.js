@@ -9,7 +9,7 @@ class Player {
         this.ground = 445;
 
         //starting position
-        this.x = 50; // starting position x axis
+        this.x = 100; // starting position x axis
         this.y = 445; //starting position y axis
 
         //end point 
@@ -31,9 +31,7 @@ class Player {
 
         this.color = '#FCA738';
         this.width = 25; // player 
-        this.height = 50; // player
-
-
+        this.height = 25; // player
 
         // moving logic
         this.speed = 0; // starting speed
@@ -43,7 +41,7 @@ class Player {
         this.is_jump = false; // default false
         this.in_air = 0; 
         this.gravity = 0.95;
-        this.jumpHeight = -15;
+        this.jumpHeight = -13;
     }
 
     moveLeft(){
@@ -81,11 +79,11 @@ class Player {
 
         //side constraint
         if(this.x < 0){
-            this.x = 0;
+            this.x = this.canvasWidth - this.width;
         }
 
         if((this.x + this.width) > this.canvasWidth){
-            this.x = this.canvasWidth - this.width;
+            this.x = 0;
         }
         
         // ground constraint
