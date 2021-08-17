@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let multi = 1;
     let scoreFrames = 0;
     let zomFrames = 0;
+    let multiFrames = 0;
     let player = new Player(canvasWidth, canvasHeight);
     // constructor(x,y,width,height,color)
     let platform1 = new Platforms(0, 470, 1000, 30, 'black');
@@ -26,14 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let platform5 = new Platforms(0, 225, 333, 10, 'yellow');
     let platform6 = new Platforms(666, 225, 333, 10, 'red');
     
-    //  Zombie constructor       x  ,  y  ,  width, height, speed, direction, platformX  , platformXW
-    let startZombie = new Zombie(0  ,  0  ,  25   , 470   , 0.5  , "right"  , platform1.x, platform1.xw);
-    let zombie      = new Zombie(425,  420,  25   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
-    let zombie1     = new Zombie(475,  420,  25   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
-    let zombie2     = new Zombie(350,  330,  25   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
-    let zombie3     = new Zombie(0  ,  330,  25   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
-    let zombie4     = new Zombie(350,  175,  25   , 50    , 2    , "left"   , platform5.x, platform5.xw);
-    let zombie5     = new Zombie(0  ,  175,  25   , 50    , 2    , "left"   , platform6.x, platform6.xw);
+    //  Zombie constructor            x          ,  y  ,  width, height, speed, direction, platformX  , platformXW
+    let startZombie = new Zombie(0               ,  0  ,  25   , 470   , 0.5  , "right"  , platform1.x, platform1.xw);
+    let zombie      = new Zombie(randomX(0,400)  ,  420,  25   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
+    let zombie1     = new Zombie(randomX(500,975),  420,  25   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
+    let zombie2     = new Zombie(randomX(350,975),  330,  25   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
+    let zombie3     = new Zombie(randomX(0,308)  ,  330,  25   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
+    let zombie4     = new Zombie(randomX(0,308)  ,  175,  25   , 50    , 2    , "left"   , platform5.x, platform5.xw);
+    let zombie5     = new Zombie(randomX(350,975),  175,  25   , 50    , 2    , "left"   , platform6.x, platform6.xw);
     new Controller(player);
 
     requestAnimationFrame(loop);
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         player.movePlayer();
         player.drawPlayer(ctx);
         
+        incMulti();
         incScore();
         drawScore();
         drawMulti();
@@ -132,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function drawMulti() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
-        ctx.fillText("Mulitplier: "+multi +"x", 8, 40);
+        ctx.fillText("Mulitplier: "+multi.toFixed(2) +"x", 8, 40);
     }
 
     function gameOver(){
@@ -149,9 +151,18 @@ document.addEventListener("DOMContentLoaded", () => {
             scoreFrames++;
         }
     }
+
+    function incMulti(){
+        if(multiFrames == 300){
+            multi += 0.05;
+            multiFrames = 0;   
+        }else{
+            multiFrames++;
+        }
+    }
+
     function fastZom(){
-        if(zomFrames == 100){
-            console.log("+1");
+        if(zomFrames == 1000){
             startZombie.speed += 0.01;
             zombie.speed      += randomSpeed();
             zombie1.speed     += randomSpeed();
@@ -172,6 +183,4 @@ document.addEventListener("DOMContentLoaded", () => {
     function randomX(min,max){
         return Math.random() * (max - min) + min;
     }
-
-    
 });

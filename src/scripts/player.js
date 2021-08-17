@@ -9,7 +9,7 @@ class Player {
         this.ground = 445;
 
         //starting position
-        this.x = 100; // starting position x axis
+        this.x = 450; // starting position x axis
         this.y = 445; //starting position y axis
 
         //end point 

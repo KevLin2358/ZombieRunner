@@ -72,6 +72,27 @@ class Zombie {
             this.direction = "left";
         }
     }
+
+    moveZombie(){
+        if(this.direction == "right"){
+            this.moveRight();
+        }
+
+        if(this.direction == "left"){
+            this.moveLeft();
+        }
+
+        //side constraint
+        if(this.x < this.platformX){
+            this.x = this.platformX;
+            this.direction = "right";
+        }
+
+        if((this.x + this.width) > this.platformXW){
+            this.x = this.platformXW - this.width;
+            this.direction = "left";
+        }
+    }
 }
 
 module.exports = Zombie;
