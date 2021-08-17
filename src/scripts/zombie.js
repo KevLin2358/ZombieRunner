@@ -1,12 +1,13 @@
 class Zombie {
     // zombie object to create
-    constructor(){ // 
-        this.width= 25;
-        this.height= 75;
+    constructor(x,y,width,height,speed,
+        direction,platformX,platformXW){ // 
+        this.width = width;
+        this.height = height;
 
         // start point
-        this.x = 1000;
-        this.y = 445;
+        this.x = x;
+        this.y = y;
 
         // end point 
         this.xEnd = this.x + this.width;
@@ -15,7 +16,7 @@ class Zombie {
         //coordinates
         // (1,0)  (1,1)
         // (0,0)  (0,1)
-        
+
         // (0,0)
         this.zz = {x: this.x, y: this.y}; 
         // (0,1)
@@ -25,14 +26,18 @@ class Zombie {
         // (1,1)
         this.oo = {x: this.xEnd, y: this.yEnd}
         
-        this.speed = 5;
-        this.direction = "left";
+        this.speed = speed;
+        this.direction = direction;
         this.spawn = this.x - this.width;
+
+        // platform movement
+        this.platformX = platformX;
+        this.platformXW = platformXW;
     }
 
     drawZombie(ctx){
         ctx.fillStyle = 'green';
-        ctx.fillRect(this.x, this.y - this.height + 25, this.width, this.height);
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
     moveLeft(){
@@ -47,7 +52,7 @@ class Zombie {
         return Math.random() * (max - min) + min;
     }
 
-    moveZombie(canvasWidth){
+    moveZombie(){
         if(this.direction == "right"){
             this.moveRight();
         }
@@ -57,13 +62,13 @@ class Zombie {
         }
 
         //side constraint
-        if(this.x < 0){
-            this.x = 0;
+        if(this.x < this.platformX){
+            this.x = this.platformX;
             this.direction = "right";
         }
 
-        if((this.x + this.width) > canvasWidth){
-            this.x = canvasWidth - this.width;
+        if((this.x + this.width) > this.platformXW){
+            this.x = this.platformXW - this.width;
             this.direction = "left";
         }
     }

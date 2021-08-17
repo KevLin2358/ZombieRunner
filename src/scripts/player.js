@@ -31,7 +31,7 @@ class Player {
 
         this.color = '#FCA738';
         this.width = 25; // player 
-        this.height = 25; // player
+        this.height = 50; // player
 
 
 
@@ -94,7 +94,7 @@ class Player {
             this.y = this.ground;
             this.is_jump = false;
         }
-        this.ground += 15;
+        this.ground += 13;
     }
 }
 module.exports = Player;
