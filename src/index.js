@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let score = 0;
     let multi = 1;
-    let scoreFrames = 0;
     let zomFrames = 0;
     let player = new Player(canvasWidth, canvasHeight);
     let item1 = new Item();
@@ -86,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
         player.movePlayer();
         player.drawPlayer(ctx);
         
-        incScore();
         drawScore();
         drawMulti();
 
@@ -144,12 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 obj1.y + obj1.height > obj2.y    
              ){
                 if(obj2.name === 'mult2'){
-                    multi += 0.2;
+                    incMulti(0.2);
                     console.log("multi2");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === 'mult3'){
-                    multi += 0.3;
+                    incMulti(0.3);
                     console.log("multi3");
                     itemRespawn(obj2);
                 }
@@ -159,17 +157,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+1'){
-                    score += 1
+                    incScore(1);
                     console.log("+1");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+5'){
-                    score += 5
+                    incScore(5);
                     console.log("+5");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+10'){
-                    score += 10
+                    incScore(10);
                     console.log("+10");
                     itemRespawn(obj2);
                 }
@@ -195,13 +193,12 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(interval);
     }
 
-    function incScore(){
-        if(scoreFrames == 5){
-            score += Math.round(1 * multi);
-            scoreFrames = 0;
-        }else{
-            scoreFrames++;
-        }
+    function incScore(num){
+        score += Math.round(num * multi);
+    }
+
+    function incMulti(num){
+        multi += num;
     }
 
     function fastZom(){

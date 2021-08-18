@@ -49,8 +49,6 @@ class Item {
     }
 
     drawItem(ctx){
-        // ctx.fillStyle = this.color;
-        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(this.itemImg, 
             this.itemX, this.itemY, this.imageWidth, this.imageHeight, 
             this.x, this.y, this.width, this.height);
