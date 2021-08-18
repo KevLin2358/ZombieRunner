@@ -1,15 +1,15 @@
 <h2>Background</h2>
-This is a 2D platformer where the player is running for their life. The object of this game will be to reach the end goal without touching the zombies.
+This is a 2D platformer where the player trying to rack up points while avoiding zombies. The player will get to move and jump to avoid zombies while also trying to get items.
 
-1) If the zombies touch the player, the player will lose.
-2) The zombie horde will be constantly moving from the left forcing the player to move the right.
+1) If the player touches the zombie, the player will lose.
+2) The zombie horde will be constantly moving around.
 
 <h2>Functionality & MVPs</h2>
 <ul>
-    <li>Players are able to control the character with WASD and spacebar</li>
-    <li>Players are able to collect powerups to slow the incoming zombie horde</li>
+    <li>Players are able to control the character with A, D and spacebar</li>
+    <li>Players are able to collect items to slow the incoming zombie horde / increase score / multiplier</li>
     <li>PLayers must avoid touching the zombies</li>
-    <li>Zombie horde will be coming from the left.</li>
+    <li>Zombies movement speed will increase over time, making your run much more difficult.</li>
     <br>
     <span>In addition, this project will include:</span>
     <li>A production README</li>
@@ -19,6 +19,7 @@ This is a 2D platformer where the player is running for their life. The object o
 <ul>
     <li>Nav links to the project's Github repo, and others.</li>
     <li>Game Controls used will be shown</li>
+    <li>Cheat sheet for items and their rewards</li>
 </ul>
 
 <h2>Technologies, Libraries, APIs</h2>
@@ -44,6 +45,7 @@ This is a 2D platformer where the player is running for their life. The object o
 <h2>Bonus Features</h2>
 <ul>
     <span>Some anticipated features are: </span>
-    <li>Every time the player wins, they get currency to improve skills or get boosts that will help them in their future runs.</li>
-    <li>Zombie obstacles that will give the game more complexity.</li>
+    <li>Every time the run is over, the score will be calculated into currency.</li>
+    <li>The currency is used to improve skills or get boosts that will help them in their future runs.</li>
+    <li>Better map design</li>
 </ul>

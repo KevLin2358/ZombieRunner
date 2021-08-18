@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let multi = 1;
     let scoreFrames = 0;
     let zomFrames = 0;
-    let multiFrames = 0;
     let player = new Player(canvasWidth, canvasHeight);
     let item1 = new Item();
     let item2 = new Item();
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let platform6 = new Platforms(666, 225, 333, 10, 'red');
     
     //  Zombie constructor            x          ,  y  ,  width, height, speed, direction, platformX  , platformXW
-    // let startZombie = new Zombie(0               ,  0  ,  25   , 470   , 0.5  , "right"  , platform1.x, platform1.xw);
     let zombie      = new Zombie(randomX(0,400)  ,  420,  25   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
     let zombie1     = new Zombie(randomX(500,975),  420,  25   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
     let zombie2     = new Zombie(randomX(350,975),  330,  25   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
@@ -61,8 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         platform6.drawPlatforms(ctx);
         
         fastZom();
-        // startZombie.moveZombie(canvasWidth);
-        // startZombie.drawZombie(ctx);
         
         zombie.moveZombie();
         zombie.drawZombie(ctx);
@@ -88,12 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
         player.movePlayer();
         player.drawPlayer(ctx);
         
-        incMulti();
         incScore();
         drawScore();
         drawMulti();
 
-        // collisionDetection(player, startZombie);
         collisionDetection(player, zombie);
         collisionDetection(player, zombie1);
         collisionDetection(player, zombie2);
@@ -205,15 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
             scoreFrames = 0;
         }else{
             scoreFrames++;
-        }
-    }
-
-    function incMulti(){
-        if(multiFrames == 300){
-            multi += 0.05;
-            multiFrames = 0;   
-        }else{
-            multiFrames++;
         }
     }
 
