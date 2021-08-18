@@ -33,13 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let platform6 = new Platforms(666, 225, 333, 10, 'red');
     
     //  Zombie constructor            x          ,  y  ,  width, height, speed, direction, platformX  , platformXW
-    let zombie      = new Zombie(randomX(0,400)  ,  420,  25   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
-    let zombie1     = new Zombie(randomX(500,975),  420,  25   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
-    let zombie2     = new Zombie(randomX(350,975),  330,  25   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
-    let zombie3     = new Zombie(randomX(0,308)  ,  330,  25   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
-    let zombie4     = new Zombie(randomX(0,308)  ,  175,  25   , 50    , 2    , "left"   , platform5.x, platform5.xw);
-    let zombie5     = new Zombie(randomX(350,975),  175,  25   , 50    , 2    , "left"   , platform6.x, platform6.xw);
-    let zombie6     = new Zombie(randomX(325,415),  250,  25   , 50    , 2    , "left"   , platform4.x, platform4.xw);
+    let zombie      = new Zombie(randomX(0,400)  ,  420,  50   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
+    let zombie1     = new Zombie(randomX(500,975),  420,  50   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
+    let zombie2     = new Zombie(randomX(350,975),  330,  50   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
+    let zombie3     = new Zombie(randomX(0,308)  ,  330,  50   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
+    let zombie4     = new Zombie(randomX(0,308)  ,  175,  50   , 50    , 2    , "left"   , platform5.x, platform5.xw);
+    let zombie5     = new Zombie(randomX(350,975),  175,  50   , 50    , 2    , "left"   , platform6.x, platform6.xw);
+    let zombie6     = new Zombie(randomX(325,415),  250,  50   , 50    , 2    , "left"   , platform4.x, platform4.xw);
 
     new Controller(player);
 
@@ -218,12 +218,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function slowZom(){
         // startZombie.speed -= 0.01;
-        zombie.speed      -= 0.5;
-        zombie1.speed     -= 0.5;
-        zombie2.speed     -= 0.5;
-        zombie3.speed     -= 0.5;
-        zombie4.speed     -= 0.5;
-        zombie5.speed     -= 0.5;
+        zombie.speed      -= 0.25;
+        zombie1.speed     -= 0.25;
+        zombie2.speed     -= 0.25;
+        zombie3.speed     -= 0.25;
+        zombie4.speed     -= 0.25;
+        zombie5.speed     -= 0.25;
     }
 
     function itemRespawn(item){

@@ -7,14 +7,24 @@ class Player {
 
         //player object
         this.ground = 445;
+        this.width = 25; // player 
+        this.height = 70; // player
 
         //starting position
         this.x = 450; // starting position x axis
         this.y = 445; //starting position y axis
 
-        this.color = '#FCA738';
-        this.width = 25; // player 
-        this.height = 25; // player
+        //player image
+        this.playerImg = new Image();
+        this.playerImg.src = 'src/images/player.png';
+
+        this.imageWidth = 13;
+        this.imageHeight = 30;
+        
+        this.imageYL = 90;
+        this.imageYR = 30;
+
+        this.direction = "left"; //default character looking to the left
 
         // moving logic
         this.speed = 0; // starting speed
@@ -29,10 +39,12 @@ class Player {
 
     moveLeft(){
         this.speed = -this.maxSpeed;
+        this.direction = "left";
     }
 
     moveRight(){
         this.speed = this.maxSpeed;
+        this.direction = "right";
     }
 
     //reset speed
@@ -47,8 +59,16 @@ class Player {
     }
 
     drawPlayer(ctx){
-        ctx.fillStyle = 'orange';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.drawImage(image, imageX, imageY, imageWidth, imageHeight, this.x, this.y, this.width, this.height);
+        if(this.direction == "left"){
+            ctx.drawImage(this.playerImg, 
+                0, this.imageYL, this.imageWidth, this.imageHeight, 
+                this.x, this.y, this.width, this.height);
+        }else if(this.direction == "right"){
+            ctx.drawImage(this.playerImg, 
+                0, this.imageYR -5, this.imageWidth, this.imageHeight, 
+                this.x, this.y, this.width, this.height);
+        }
     }
 
     movePlayer(){
@@ -71,6 +91,7 @@ class Player {
             this.is_jump = false;
         }
         this.ground += 13;
+
     }
 }
 module.exports = Player;

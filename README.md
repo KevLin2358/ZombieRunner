@@ -14,7 +14,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <span>In addition, this project will include:</span>
     <li>A production README</li>
 </ul>
-<img src = "wire.png" style ="height: 500px; width:1024px;">
+<!-- <img src = "wire.png" style ="height: 500px; width:1024px;"> -->
 
 <ul>
     <li>Nav links to the project's Github repo, and others.</li>
@@ -26,10 +26,17 @@ This is a 2D platformer where the player trying to rack up points while avoiding
 <ul>
     <li>Canvas API to render the game</li>
     <li>Webpack to bundle and transpile the source JavaScript code</li>
-    <li>Assets:<li>
+    <li>Assets:</li>
     <ul>
-        <li>Zombie sprite asset from https://www.vhv.rs/viewpic/bxwRi_pixel-zombie-sprite-sheet-hd-png-download/</li>
-        <li>Item sprite asset from Emma Mrou: https://www.pinterest.fr/pin/446560119286334934/</li>
+        <li>Zombie sprite asset from: 
+            <a href=https://www.vhv.rs/viewpic/bxwRi_pixel-zombie-sprite-sheet-hd-png-download/'>link</a>
+        </li>
+        <li>Item sprite asset from Emma Mrou: 
+            <a href='https://www.pinterest.fr/pin/446560119286334934/'>link</a>
+        </li>
+        <li>Character sprite: 
+            <a href='https://www.deviantart.com/demontomat0/art/Survivor-Sprites-WIP-213137373'>link</a>
+        </li>
     </ul>
 </ul>
 
