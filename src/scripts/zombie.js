@@ -1,31 +1,22 @@
 class Zombie {
     // zombie object to create
-    constructor(x,y,width,height,speed,
-        direction,platformX,platformXW){ // 
+    constructor(x,y,width,height,speed,direction,platformX,platformXW){ 
+        
+        // 
         this.width = width;
         this.height = height;
+        
+        this.zombieImg = new Image();
+        this.zombieImg.src = 'src/images/zombie.png';
+        this.imageWidth = 66;
+        this.imageHeight = 77;
+        this.frame = 0;
+        this.gameFrame = 0;
 
         // start point
         this.x = x;
         this.y = y;
 
-        // end point 
-        this.xEnd = this.x + this.width;
-        this.yEnd = this.y + this.height;
-
-        //coordinates
-        // (1,0)  (1,1)
-        // (0,0)  (0,1)
-
-        // (0,0)
-        this.zz = {x: this.x, y: this.y}; 
-        // (0,1)
-        this.zo = {x: this.x, y: this.yEnd }
-        // (1,0)
-        this.oz = {x: this.xEnd, y: this.y}
-        // (1,1)
-        this.oo = {x: this.xEnd, y: this.yEnd}
-        
         this.speed = speed;
         this.direction = direction;
         this.spawn = this.x - this.width;
@@ -36,8 +27,16 @@ class Zombie {
     }
 
     drawZombie(ctx){
-        ctx.fillStyle = 'green';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.drawImage(image, imageX, imageY, imageWidth, imageHeight, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.zombieImg, 
+            this.frame * this.imageWidth, 0, this.imageWidth, this.imageHeight, 
+            this.x, this.y, this.width, this.height);
+    }
+
+    update(){
+        if(this.gameFrame % 5 === 0){
+            this.frame > 1 ? this.frame = 0 : this.frame++;
+        }
     }
 
     moveLeft(){
@@ -71,6 +70,8 @@ class Zombie {
             this.x = this.platformXW - this.width;
             this.direction = "left";
         }
+        this.gameFrame++;
+        this.update();
     }
 }
 

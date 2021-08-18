@@ -7,7 +7,7 @@ const itemsInfo = [
     {name: '+10', color: 'grey'}, // +10 score
 ]
 const xWidth = [100, 150, 200, 250, 300, 650, 700, 750, 800, 850, 900];
-const yHeight = [290, 400, 190, 320];
+const yHeight = [290, 430, 190, 320];
 class Item {
     constructor(){
         this.width = 30;

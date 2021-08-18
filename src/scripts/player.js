@@ -12,23 +12,6 @@ class Player {
         this.x = 450; // starting position x axis
         this.y = 445; //starting position y axis
 
-        //end point 
-        this.xEnd = this.x + this.width;
-        this.yEnd = this.y + this.height;
-
-        //coordinates
-        // (1,0)  (1,1)
-        // (0,0)  (0,1)
-
-        // (0,0)
-        this.zz = {x: this.x, y: this.y}; 
-        // (0,1)
-        this.zo = {x: this.x, y: this.yEnd }
-        // (1,0)
-        this.oz = {x: this.xEnd, y: this.y}
-        // (1,1)
-        this.oo = {x: this.xEnd, y: this.yEnd}
-
         this.color = '#FCA738';
         this.width = 25; // player 
         this.height = 25; // player
@@ -45,15 +28,11 @@ class Player {
     }
 
     moveLeft(){
-        // console.log("move left");
         this.speed = -this.maxSpeed;
-        // console.log(this.x);
     }
 
     moveRight(){
-        // console.log("move right");
         this.speed = this.maxSpeed;
-        // console.log(this.x);
     }
 
     //reset speed
@@ -87,7 +66,6 @@ class Player {
         }
         
         // ground constraint
-        // 445 // platform.y - player height
         if(this.y >= this.ground){
             this.y = this.ground;
             this.is_jump = false;

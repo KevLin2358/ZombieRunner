@@ -7,6 +7,8 @@ const Item = require("./scripts/item")
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
     let canvas = document.getElementById('canvas1');
     let ctx = canvas.getContext('2d');
     const canvasWidth = 1000;
