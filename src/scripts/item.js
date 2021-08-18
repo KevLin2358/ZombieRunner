@@ -1,24 +1,30 @@
 const itemsInfo = [
-    {name: 'clock', color: 'blue'}, // slow down zombie
-    {name: 'mult2', color: 'red'}, // multi + 0.2
-    {name: 'mult3', color: 'purple'}, // multi + 0.3
-    {name: '+1', color: 'yellow'}, // +1 score
-    {name: '+5', color: 'pink'}, // + 5 score
-    {name: '+10', color: 'grey'}, // +10 score
+    {name: 'snow', x: 306, y:442}, // slow down zombie
+    {name: 'mult2', x: 272, y:476}, // multi + 0.2
+    {name: 'mult3', x: 306, y:476}, // multi + 0.3
+    {name: '+1', x: 0, y:0}, // +1 score
+    {name: '+5', x: 34, y:0}, // + 5 score
+    {name: '+10', x: 68, y:0}, // +10 score
 ]
 const xWidth = [100, 150, 200, 250, 300, 650, 700, 750, 800, 850, 900];
 const yHeight = [290, 430, 190, 320];
 class Item {
     constructor(){
-        this.width = 30;
-        this.height = 30;
-        
-        let items = itemsInfo;
-        let ranNum = Math.floor(Math.random() * (items.length));
-        this.randomItem = items[ranNum];
-        this.name = this.randomItem.name;
-        this.color = this.randomItem.color;
+        this.width = 34;
+        this.height = 34;
 
+        this.items = itemsInfo;
+        let ranNum = Math.floor(Math.random() * (this.items.length));
+        this.randomItem = this.items[ranNum];
+        this.name = this.randomItem.name;
+
+        this.itemImg = new Image();
+        this.itemImg.src = 'src/images/item.png';
+        this.imageWidth = 34;
+        this.imageHeight = 34;
+        this.itemX = this.randomItem.x;
+        this.itemY = this.randomItem.y;
+        
         let xh = xWidth;
         let yh = yHeight;
         let ranX = Math.floor(Math.random() * (xh.length));
@@ -27,11 +33,11 @@ class Item {
         this.y = yh[ranY];
     }
     randomizePower(){
-        let items = itemsInfo;
-        let ranNum = Math.floor(Math.random() * (items.length));
-        this.randomItem = items[ranNum];
+        let ranNum = Math.floor(Math.random() * (this.items.length));
+        this.randomItem = this.items[ranNum];
         this.name = this.randomItem.name;
-        this.color = this.randomItem.color;
+        this.itemX = this.randomItem.x;
+        this.itemY = this.randomItem.y;
     }
     randomizeSpawn(){
         let xh = xWidth;
@@ -43,8 +49,11 @@ class Item {
     }
 
     drawItem(ctx){
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.fillStyle = this.color;
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.itemImg, 
+            this.itemX, this.itemY, this.imageWidth, this.imageHeight, 
+            this.x, this.y, this.width, this.height);
     }
 }
 

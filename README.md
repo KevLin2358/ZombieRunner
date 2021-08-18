@@ -26,7 +26,13 @@ This is a 2D platformer where the player trying to rack up points while avoiding
 <ul>
     <li>Canvas API to render the game</li>
     <li>Webpack to bundle and transpile the source JavaScript code</li>
+    <li>Assets:<li>
+    <ul>
+        <li>Zombie sprite asset from https://www.vhv.rs/viewpic/bxwRi_pixel-zombie-sprite-sheet-hd-png-download/</li>
+        <li>Item sprite asset from Emma Mrou: https://www.pinterest.fr/pin/446560119286334934/</li>
+    </ul>
 </ul>
+
 
 <h2>Implementation Timeline</h2>
 <ul>

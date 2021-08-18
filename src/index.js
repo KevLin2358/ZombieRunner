@@ -153,9 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log("multi3");
                     itemRespawn(obj2);
                 }
-                else if(obj2.name === 'clock'){
+                else if(obj2.name === 'snow'){
                     slowZom();
-                    console.log("clock");
+                    console.log("snow");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+1'){
