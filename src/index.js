@@ -2,13 +2,13 @@ const Player = require("./scripts/player");
 const Platforms = require("./scripts/platform");
 const Controller = require("./scripts/controller");
 const Zombie = require("./scripts/zombie");
-const Item = require("./scripts/item")
+const Item = require("./scripts/item");
+const Background = require("./scripts/background");
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
+    let frames = 0;
     let canvas = document.getElementById('canvas1');
     let ctx = canvas.getContext('2d');
     const canvasWidth = 1000;
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let player = new Player(canvasWidth, canvasHeight);
     let item1 = new Item();
     let item2 = new Item();
+    let background = new Background(ctx,canvasWidth, canvasHeight);
 
     // need to refactor
     // constructor(x,y,width,height)
@@ -49,8 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function loop(){
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        randomBg();
+
         item1.drawItem(ctx);
         item2.drawItem(ctx);
+    
+
         //need to refactor
         platform1.drawPlatforms(ctx);
         platform2.drawPlatforms(ctx);
@@ -237,4 +242,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return Math.random() * (max - min) + min;
     }
 
+    function randomBg(){
+        if(frames < 1000){
+            background.renderDay();
+        }else{
+            background.renderNight();
+        }
+        frames++;
+        if (frames > 2000){
+            frames = 0;
+        }
+        console.log(frames);
+    }
 });
