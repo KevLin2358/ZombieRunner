@@ -8,7 +8,7 @@ class Player {
         //player object
         this.ground = 445;
         this.width = 25; // player 
-        this.height = 70; // player
+        this.height = 60; // player
 
         //starting position
         this.x = 450; // starting position x axis

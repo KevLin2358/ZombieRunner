@@ -21,37 +21,37 @@ document.addEventListener("DOMContentLoaded", () => {
     let item1 = new Item();
     let item2 = new Item();
 
-    // constructor(x,y,width,height,color)
-    let platform1 = new Platforms(0, 470, 1000, 30, 'black');
+    // need to refactor
+    // constructor(x,y,width,height)
+    let platform1 = new Platforms(0, 470, 1000, 30);
     
-    let platform2 = new Platforms(0, 380, 333, 10, 'yellow');
-    let platform3 = new Platforms(666, 380, 333, 10, 'red');
+    let platform2 = new Platforms(0, 360, 333, 5);
+    let platform3 = new Platforms(666, 360, 333, 5);
     
-    let platform4 = new Platforms(425, 300, 140, 10, 'blue');
+    let platform4 = new Platforms(425, 270, 140, 5);
 
-    let platform5 = new Platforms(0, 225, 333, 10, 'yellow');
-    let platform6 = new Platforms(666, 225, 333, 10, 'red');
+    let platform5 = new Platforms(0, 185, 333, 5);
+    let platform6 = new Platforms(666, 185, 333, 5);
     
+
     //  Zombie constructor            x          ,  y  ,  width, height, speed, direction, platformX  , platformXW
     let zombie      = new Zombie(randomX(0,400)  ,  420,  50   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
     let zombie1     = new Zombie(randomX(500,975),  420,  50   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
-    let zombie2     = new Zombie(randomX(350,975),  330,  50   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
-    let zombie3     = new Zombie(randomX(0,308)  ,  330,  50   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
-    let zombie4     = new Zombie(randomX(0,308)  ,  175,  50   , 50    , 2    , "left"   , platform5.x, platform5.xw);
-    let zombie5     = new Zombie(randomX(350,975),  175,  50   , 50    , 2    , "left"   , platform6.x, platform6.xw);
-    let zombie6     = new Zombie(randomX(325,415),  250,  50   , 50    , 2    , "left"   , platform4.x, platform4.xw);
+    let zombie2     = new Zombie(randomX(350,975),  310,  50   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
+    let zombie3     = new Zombie(randomX(0,308)  ,  310,  50   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
+    let zombie4     = new Zombie(randomX(0,308)  ,  135,  50   , 50    , 2    , "left"   , platform5.x, platform5.xw);
+    let zombie5     = new Zombie(randomX(350,975),  135,  50   , 50    , 2    , "left"   , platform6.x, platform6.xw);
+    let zombie6     = new Zombie(randomX(325,415),  220,  50   , 50    , 2    , "left"   , platform4.x, platform4.xw);
 
     new Controller(player);
-
+    
     requestAnimationFrame(loop);
     
     function loop(){
-
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
         item1.drawItem(ctx);
         item2.drawItem(ctx);
-
+        //need to refactor
         platform1.drawPlatforms(ctx);
         platform2.drawPlatforms(ctx);
         platform3.drawPlatforms(ctx);
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         platform6.drawPlatforms(ctx);
         
         fastZom();
-        
+        //need to refactor
         zombie.moveZombie();
         zombie.drawZombie(ctx);
         
@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         drawScore();
         drawMulti();
 
+        // need to refactor
         collisionDetection(player, zombie);
         collisionDetection(player, zombie1);
         collisionDetection(player, zombie2);
@@ -97,8 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         collisionDetection(player, zombie6);
         collisionDetection(player, item1);
         collisionDetection(player, item2);
-
-
         collisionDetection(player, platform1); 
         collisionDetection(player, platform2);
         collisionDetection(player, platform3); 
@@ -109,9 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(loop);
     }
     
-    //problem with collision with randomizeZombie
-    
     function collisionDetection(obj1, obj2){
+        // need to refactor
         // collision event between player, zombie
         if(obj2.constructor === Zombie){
             if( obj1.x < obj2.x + obj2.width &&   
@@ -156,19 +154,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log("snow");
                     itemRespawn(obj2);
                 }
-                else if(obj2.name === '+1'){
-                    incScore(1);
-                    console.log("+1");
-                    itemRespawn(obj2);
-                }
-                else if(obj2.name === '+5'){
-                    incScore(5);
-                    console.log("+5");
-                    itemRespawn(obj2);
-                }
                 else if(obj2.name === '+10'){
                     incScore(10);
                     console.log("+10");
+                    itemRespawn(obj2);
+                }
+                else if(obj2.name === '+25'){
+                    incScore(25);
+                    console.log("+25");
+                    itemRespawn(obj2);
+                }
+                else if(obj2.name === '+50'){
+                    incScore(50);
+                    console.log("+50");
                     itemRespawn(obj2);
                 }
             }

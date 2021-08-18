@@ -2,12 +2,13 @@ const itemsInfo = [
     {name: 'snow', x: 306, y:442}, // slow down zombie
     {name: 'mult2', x: 272, y:476}, // multi + 0.2
     {name: 'mult3', x: 306, y:476}, // multi + 0.3
-    {name: '+1', x: 0, y:0}, // +1 score
-    {name: '+5', x: 34, y:0}, // + 5 score
-    {name: '+10', x: 68, y:0}, // +10 score
+    {name: '+10', x: 0, y:0}, // +1 score
+    {name: '+25', x: 34, y:0}, // + 5 score
+    {name: '+50', x: 68, y:0}, // +10 score
 ]
-const xWidth = [100, 150, 200, 250, 300, 650, 700, 750, 800, 850, 900];
-const yHeight = [290, 430, 190, 320];
+//need to refactor
+const xWidth = [100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 650, 675, 700, 725, 750, 775, 800, 825, 850, 875, 900];
+const yHeight = [320, 430, 150];
 class Item {
     constructor(){
         this.width = 34;
