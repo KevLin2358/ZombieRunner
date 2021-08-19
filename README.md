@@ -20,7 +20,6 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li>A production README</li>
     <li>Nav links to the project's Github repo, and others.</li>
     <li>Game Controls used will be shown</li>
-    <li>Cheat sheet for items and their rewards</li>
 </ul>
 
 <h2>Technologies, Libraries, APIs</h2>
