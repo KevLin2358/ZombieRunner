@@ -1,13 +1,13 @@
 <h2>Background</h2>
 This is a 2D platformer where the player trying to rack up points while avoiding zombies. The player will get to move and jump to avoid zombies while also trying to get items.
-
-1) If the player touches the zombie, the player will lose.
-2) The zombie horde will be constantly moving around.
-
+<ol>
+    <li> If the player touches the zombie, the player will lose.</li>
+    <li> The zombie horde will be constantly moving around.</li>
+</ol>
 <h2>Functionality & MVPs</h2>
 <ul>
     <li>Players are able to control the character with A, D and spacebar</li>
-    <li>Players are able to collect items to slow the incoming zombie horde / increase score / multiplier</li>
+    <li>Players are able to collect items to increase score / multiplier</li>
     <li>PLayers must avoid touching the zombies</li>
     <li>Zombies movement speed will increase over time, making your run much more difficult.</li>
     <br>
@@ -62,4 +62,6 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li>Every time the run is over, the score will be calculated into currency.</li>
     <li>The currency is used to improve skills or get boosts that will help them in their future runs.</li>
     <li>Better map design</li>
+    <li>more diverse powerups</li>
+    <li>player and zombie sprite animation</li>
 </ul>
