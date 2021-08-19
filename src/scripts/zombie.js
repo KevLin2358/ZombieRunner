@@ -1,6 +1,6 @@
 class Zombie {
     // zombie object to create
-    constructor(x,y,speed,direction,platformX,platformXW){ 
+    constructor(x,y,direction,platformX,platformXW){ 
         
         // 
         this.width = 40;
@@ -17,7 +17,7 @@ class Zombie {
         this.x = x;
         this.y = y;
 
-        this.speed = speed;
+        this.speed = 0.09;
         this.direction = direction;
         this.spawn = this.x - this.width;
 

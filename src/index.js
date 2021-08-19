@@ -36,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let platform5 = new Platforms(0, 185, 333, 5);
     let platform6 = new Platforms(666, 185, 333, 5);
 
-    //  Zombie constructor            x          ,  y  , speed, direction, platformX  , platformXW
-    let zombie      = new Zombie(randomX(0,300)  ,  430, 1.3  , "right"  , platform1.x, platform1.xw);
-    let zombie1     = new Zombie(randomX(600,975),  430, 0.5  , "left"   , platform1.x, platform1.xw);
-    let zombie2     = new Zombie(randomX(350,975),  320, 3.2  , "left"   , platform3.x, platform3.xw);
-    let zombie3     = new Zombie(randomX(0,308)  ,  320, 0.9  , "right"  , platform2.x, platform2.xw);
-    let zombie4     = new Zombie(randomX(0,308)  ,  145, 2    , "left"   , platform5.x, platform5.xw);
-    let zombie5     = new Zombie(randomX(350,975),  145, 2    , "left"   , platform6.x, platform6.xw);
-    let zombie6     = new Zombie(randomX(325,415),  230, 2    , "left"   , platform4.x, platform4.xw);
+    //  Zombie constructor            x          ,  y  ,  direction, platformX  , platformXW
+    let zombie      = new Zombie(randomX(0,300)  ,  430,  "right"  , platform1.x, platform1.xw);
+    let zombie1     = new Zombie(randomX(600,975),  430,  "left"   , platform1.x, platform1.xw);
+    let zombie2     = new Zombie(randomX(350,975),  320,  "left"   , platform3.x, platform3.xw);
+    let zombie3     = new Zombie(randomX(0,308)  ,  320,  "right"  , platform2.x, platform2.xw);
+    let zombie4     = new Zombie(randomX(0,308)  ,  145,  "left"   , platform5.x, platform5.xw);
+    let zombie5     = new Zombie(randomX(350,975),  145,  "left"   , platform6.x, platform6.xw);
+    let zombie6     = new Zombie(randomX(325,415),  230,  "left"   , platform4.x, platform4.xw);
 
     new Controller(player);
         
