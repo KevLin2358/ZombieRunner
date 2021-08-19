@@ -10,8 +10,6 @@ class Zombie {
         this.zombieImg.src = 'src/images/zombie.png';
         this.imageWidth = 66;
         this.imageHeight = 77;
-        this.frame = 0;
-        this.gameFrame = 0;
 
         // start point
         this.x = x;
@@ -29,14 +27,8 @@ class Zombie {
     drawZombie(ctx){
         // ctx.drawImage(image, imageX, imageY, imageWidth, imageHeight, this.x, this.y, this.width, this.height);
         ctx.drawImage(this.zombieImg, 
-            this.frame * this.imageWidth, 0, this.imageWidth, this.imageHeight, 
+            this.imageWidth, 0, this.imageWidth, this.imageHeight, 
             this.x, this.y, this.width, this.height);
-    }
-
-    update(){
-        if(this.gameFrame % 30 === 0){
-            this.frame > 1 ? this.frame = 0 : this.frame++;
-        }
     }
 
     moveLeft(){
@@ -70,8 +62,6 @@ class Zombie {
             this.x = this.platformXW - this.width;
             this.direction = "left";
         }
-        this.gameFrame++;
-        this.update();
     }
 }
 

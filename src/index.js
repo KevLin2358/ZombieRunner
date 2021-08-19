@@ -88,8 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         player.movePlayer();
         player.drawPlayer(ctx);
         
-        drawScore();
-        drawMulti();
+        drawScoreMulti()
 
         // need to refactor
         collisionDetection(player, zombie);
@@ -153,7 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === 'snow'){
-                    slowZom();
+                    // slowZom();
+                    incMulti(0.1);
                     console.log("snow");
                     itemRespawn(obj2);
                 }
@@ -177,16 +177,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //drawing function
-    function drawScore() {
+    function drawScoreMulti() {
+        ctx.beginPath();
+        ctx.textAlign = 'center';
         ctx.font = "16px Arial";
         ctx.fillStyle = "white";
-        ctx.fillText("Score: "+score, 30, 20);
-    }
-
-    function drawMulti() {
-        ctx.font = "16px Arial";
-        ctx.fillStyle = "white";
-        ctx.fillText("Mulitplier: "+multi.toFixed(2) +"x", 55, 40);
+        ctx.fillText("Score: "+score, canvasWidth/2,20);
+        ctx.fillText("Mulitplier: "+multi.toFixed(2) +"x", canvasWidth/2,40);
+        ctx.closePath();
     }
 
     // scoring
@@ -233,15 +231,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function slowZom(){
-        // startZombie.speed -= 0.01;
-        zombie.speed      -= 0.50;
-        zombie1.speed     -= 0.50;
-        zombie2.speed     -= 0.50;
-        zombie3.speed     -= 0.50;
-        zombie4.speed     -= 0.50;
-        zombie5.speed     -= 0.50;
-    }
+    // function slowZom(){
+    //     // startZombie.speed -= 0.01;
+    //     zombie.speed      -= 0.50;
+    //     zombie1.speed     -= 0.50;
+    //     zombie2.speed     -= 0.50;
+    //     zombie3.speed     -= 0.50;
+    //     zombie4.speed     -= 0.50;
+    //     zombie5.speed     -= 0.50;
+    // }
 
     function itemRespawn(item){
         item.randomizeSpawn();
