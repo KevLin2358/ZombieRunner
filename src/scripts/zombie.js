@@ -3,13 +3,17 @@ class Zombie {
     constructor(x,y,direction,platformX,platformXW){ 
         
         // 
-        this.width = 40;
+        this.width = 25;
         this.height = 40;
         
-        this.zombieImg = new Image();
-        this.zombieImg.src = 'src/images/zombie.png';
-        this.imageWidth = 66;
-        this.imageHeight = 77;
+        this.zombieImgL = new Image();
+        this.zombieImgL.src = 'src/images/zombieL.png';
+
+        this.zombieImgR = new Image();
+        this.zombieImgR.src = 'src/images/zombieR.png';
+
+        this.imageWidth = 30;
+        this.imageHeight = 75;
 
         // start point
         this.x = x;
@@ -26,9 +30,16 @@ class Zombie {
 
     drawZombie(ctx){
         // ctx.drawImage(image, imageX, imageY, imageWidth, imageHeight, this.x, this.y, this.width, this.height);
-        ctx.drawImage(this.zombieImg, 
-            this.imageWidth, 0, this.imageWidth, this.imageHeight, 
-            this.x, this.y, this.width, this.height);
+        if(this.direction == "left"){
+            ctx.drawImage(this.zombieImgL, 
+                0, 0, this.imageWidth, this.imageHeight, 
+                this.x, this.y, this.width, this.height);
+        } else if(this.direction == "right"){
+            ctx.drawImage(this.zombieImgR, 
+                0, 0, this.imageWidth, this.imageHeight, 
+                this.x, this.y, this.width, this.height);
+        }
+
     }
 
     moveLeft(){

@@ -28,20 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // constructor(x,y,width,height)
     let platform1 = new Platforms(0, 470, 1000, 30);
     
-    let platform2 = new Platforms(0, 360, 333, 5);
-    let platform3 = new Platforms(666, 360, 333, 5);
+    let platform2 = new Platforms(0, 360, 340, 5);
+    let platform3 = new Platforms(660, 360, 340, 5);
     
     let platform4 = new Platforms(425, 270, 140, 5);
 
-    let platform5 = new Platforms(0, 185, 333, 5);
-    let platform6 = new Platforms(666, 185, 333, 5);
+    let platform5 = new Platforms(0, 185, 340, 5);
+    let platform6 = new Platforms(660, 185, 340, 5);
 
     //  Zombie constructor            x          ,  y  ,  direction, platformX  , platformXW
     // let zombie      = new Zombie(randomX(0,300)  ,  430,  "right"  , platform1.x, platform1.xw);
     let zombie1     = new Zombie(randomX(600,975),  430,  "left"   , platform1.x, platform1.xw);
-    // let zombie2     = new Zombie(randomX(350,975),  320,  "left"   , platform3.x, platform3.xw);
+    let zombie2     = new Zombie(randomX(350,975),  320,  "left"   , platform3.x, platform3.xw);
     let zombie3     = new Zombie(randomX(0,308)  ,  320,  "right"  , platform2.x, platform2.xw);
-    // let zombie4     = new Zombie(randomX(0,308)  ,  145,  "left"   , platform5.x, platform5.xw);
+    let zombie4     = new Zombie(randomX(0,308)  ,  145,  "left"   , platform5.x, platform5.xw);
     let zombie5     = new Zombie(randomX(350,975),  145,  "left"   , platform6.x, platform6.xw);
     // let zombie6     = new Zombie(randomX(325,415),  230,  "left"   , platform4.x, platform4.xw);
 
@@ -70,14 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
         zombie1.moveZombie();
         zombie1.drawZombie(ctx);
 
-        // zombie2.moveZombie();
-        // zombie2.drawZombie(ctx);
+        zombie2.moveZombie();
+        zombie2.drawZombie(ctx);
         
         zombie3.moveZombie();
         zombie3.drawZombie(ctx);
 
-        // zombie4.moveZombie();
-        // zombie4.drawZombie(ctx);
+        zombie4.moveZombie();
+        zombie4.drawZombie(ctx);
 
         zombie5.moveZombie();
         zombie5.drawZombie(ctx);
@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // need to refactor
         // collisionDetection(player, zombie);
         collisionDetection(player, zombie1);
-        // collisionDetection(player, zombie2);
+        collisionDetection(player, zombie2);
         collisionDetection(player, zombie3);
-        // collisionDetection(player, zombie4);
+        collisionDetection(player, zombie4);
         collisionDetection(player, zombie5);
         // collisionDetection(player, zombie6);
         collisionDetection(player, item1);
@@ -220,9 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // startZombie.speed += 0.01;
             // zombie.speed      += 0.01;
             zombie1.speed     += 0.01;
-            // zombie2.speed     += 0.01;
+            zombie2.speed     += 0.01;
             zombie3.speed     += 0.01;
-            // zombie4.speed     += 0.01;
+            zombie4.speed     += 0.01;
             zombie5.speed     += 0.01;
             // zombie6.speed     += 0.01;
             zomFrames = 0;
