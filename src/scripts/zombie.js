@@ -17,7 +17,7 @@ class Zombie {
         this.x = x;
         this.y = y;
 
-        this.speed = 0.09;
+        this.speed = 0.2;
         this.direction = direction;
         this.spawn = this.x - this.width;
 
@@ -61,12 +61,12 @@ class Zombie {
         }
 
         //side constraint
-        if(this.x < this.platformX){
+        if(this.x < this.platformX - 20){
             this.x = this.platformX;
             this.direction = "right";
         }
 
-        if((this.x + this.width) > this.platformXW){
+        if((this.x + this.width) > this.platformXW + 20){
             this.x = this.platformXW - this.width;
             this.direction = "left";
         }
