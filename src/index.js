@@ -218,14 +218,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // game logic
     function fastZom(){
-        if(zomFrames == 1000){
+        if(zomFrames == 5000){
             // startZombie.speed += 0.01;
-            zombie.speed      += randomSpeed();
-            zombie1.speed     += randomSpeed();
-            zombie2.speed     += randomSpeed();
-            zombie3.speed     += randomSpeed();
-            zombie4.speed     += randomSpeed();
-            zombie5.speed     += randomSpeed();
+            zombie.speed      += 0.01;
+            zombie1.speed     += 0.01;
+            zombie2.speed     += 0.01;
+            zombie3.speed     += 0.01;
+            zombie4.speed     += 0.01;
+            zombie5.speed     += 0.01;
             zomFrames = 0;
         }else{
             zomFrames++;
