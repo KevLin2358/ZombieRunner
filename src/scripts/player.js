@@ -28,7 +28,7 @@ class Player {
 
         // moving logic
         this.speed = 0; // starting speed
-        this.maxSpeed = 5; // increment speed 
+        this.maxSpeed = 2.5; // increment speed 
 
         //jumping logic
         this.is_jump = false; // default false
