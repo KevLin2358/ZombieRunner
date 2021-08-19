@@ -12,6 +12,7 @@ export function renderModal(ctx, canvasWidth, ready, startScreen){
         let edu4 = "A to move left";
         let edu5 = "D to move right";
         let edu6 = "Space to Jump";
+        let edu7 = "M to mute / unmute music";
       
         ctx.fillText(edu,canvasWidth/2,50);
         ctx.fillText(edu1,canvasWidth/2,100);
@@ -20,7 +21,8 @@ export function renderModal(ctx, canvasWidth, ready, startScreen){
         ctx.fillText(edu4,canvasWidth/2,250);
         ctx.fillText(edu5,canvasWidth/2,300);
         ctx.fillText(edu6,canvasWidth/2,350);
-        ctx.fillText("Press Enter to Start!",canvasWidth/2,400);
+        ctx.fillText(edu7,canvasWidth/2,400);
+        ctx.fillText("Press Enter to Start!",canvasWidth/2,450);
         ctx.closePath();
     }
 };

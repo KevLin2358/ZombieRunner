@@ -19,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let item1 = new Item();
     let item2 = new Item();
     let background = new Background(ctx,canvasWidth, canvasHeight);
-    
+
+    let bgMusic = new Audio("src/sound/circus.mp3");
+    let music = false;
+
     // screen logic
     let startScreen = true;
     let ready = false;
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // let zombie6     = new Zombie(randomX(325,415),  230,  "left"   , platform4.x, platform4.xw);
 
     new Controller(player);
-        
+
     function loop(){
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         randomBg();
@@ -143,33 +146,27 @@ document.addEventListener("DOMContentLoaded", () => {
              ){
                 if(obj2.name === 'mult2'){
                     incMulti(0.2);
-                    console.log("multi2");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === 'mult3'){
                     incMulti(0.3);
-                    console.log("multi3");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === 'snow'){
                     // slowZom();
                     incMulti(0.1);
-                    console.log("snow");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+10'){
                     incScore(10);
-                    console.log("+10");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+25'){
                     incScore(25);
-                    console.log("+25");
                     itemRespawn(obj2);
                 }
                 else if(obj2.name === '+50'){
                     incScore(50);
-                    console.log("+50");
                     itemRespawn(obj2);
                 }
             }
@@ -210,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function start(){// if 
         ready = true;
         startScreen = false;
+        bgMusic.play();
         requestAnimationFrame(loop);
     }
 
@@ -272,6 +270,18 @@ document.addEventListener("DOMContentLoaded", () => {
             case 13: // enter
             if(!ready){
                 start(); // breaking
+            }
+            break;
+        }        
+        switch(e.keyCode){
+            case 77: // m
+            if(music){
+                music = false;
+                bgMusic.pause(); // breaking
+            }else if(!music){
+                music = true;
+                bgMusic.loop = true;
+                bgMusic.play();
             }
             break;
         }

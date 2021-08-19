@@ -8,10 +8,9 @@ This is a 2D platformer where the player trying to rack up points while avoiding
 <ul>
     <li>Players are able to control the character with A, D and spacebar</li>
     <li>Players are able to collect items to increase score / multiplier</li>
-    <li>PLayers must avoid touching the zombies</li>
+    <li>Players must avoid touching the zombies</li>
     <li>Zombies movement speed will increase over time, making your run much more difficult.</li>
     <br>
-
 </ul>
 <!-- <img src = "wire.png" style ="height: 500px; width:1024px;"> -->
 
@@ -37,6 +36,9 @@ This is a 2D platformer where the player trying to rack up points while avoiding
         <li>Character sprite: 
             <a href='https://www.deviantart.com/demontomat0/art/Survivor-Sprites-WIP-213137373'>link</a>
         </li>
+        <li>Music from: Circus Theme (Ragtime Version) by Alexander Nakarada  <a href='https://www.serpentsoundstudios.com'>link</a></li>
+        <li>Music promoted by <a href='https://www.free-stock-music.com'>link</a></li>
+        <li>Attribution 4.0 International (CC BY 4.0)<a href='https://creativecommons.org/licenses/by/4.0/'>link</a></li>
     </ul>
 </ul>
 
