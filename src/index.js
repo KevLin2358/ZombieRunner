@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let item2 = new Item();
     let background = new Background(ctx,canvasWidth, canvasHeight);
 
-    let bgMusic = new Audio("src/sound/circus.mp3");
+    let bgMusic = new Audio("src/sound/chase.mp3");
+    bgMusic.volume = 0.3;
     let music = false;
 
     // screen logic
