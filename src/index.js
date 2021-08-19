@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // game logic
     function fastZom(){
-        if(zomFrames == 5000){
+        if(zomFrames == 1000){
             // startZombie.speed += 0.01;
             zombie.speed      += 0.01;
             zombie1.speed     += 0.01;
@@ -226,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
             zombie3.speed     += 0.01;
             zombie4.speed     += 0.01;
             zombie5.speed     += 0.01;
+            zombie6.speed     += 0.01;
             zomFrames = 0;
         }else{
             zomFrames++;

@@ -34,7 +34,7 @@ class Zombie {
     }
 
     update(){
-        if(this.gameFrame % 15 === 0){
+        if(this.gameFrame % 30 === 0){
             this.frame > 1 ? this.frame = 0 : this.frame++;
         }
     }
