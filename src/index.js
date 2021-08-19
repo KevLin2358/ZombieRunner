@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let platform6 = new Platforms(666, 185, 333, 5);
 
     //  Zombie constructor            x          ,  y  ,  direction, platformX  , platformXW
-    let zombie      = new Zombie(randomX(0,300)  ,  430,  "right"  , platform1.x, platform1.xw);
+    // let zombie      = new Zombie(randomX(0,300)  ,  430,  "right"  , platform1.x, platform1.xw);
     let zombie1     = new Zombie(randomX(600,975),  430,  "left"   , platform1.x, platform1.xw);
-    let zombie2     = new Zombie(randomX(350,975),  320,  "left"   , platform3.x, platform3.xw);
+    // let zombie2     = new Zombie(randomX(350,975),  320,  "left"   , platform3.x, platform3.xw);
     let zombie3     = new Zombie(randomX(0,308)  ,  320,  "right"  , platform2.x, platform2.xw);
-    let zombie4     = new Zombie(randomX(0,308)  ,  145,  "left"   , platform5.x, platform5.xw);
+    // let zombie4     = new Zombie(randomX(0,308)  ,  145,  "left"   , platform5.x, platform5.xw);
     let zombie5     = new Zombie(randomX(350,975),  145,  "left"   , platform6.x, platform6.xw);
-    let zombie6     = new Zombie(randomX(325,415),  230,  "left"   , platform4.x, platform4.xw);
+    // let zombie6     = new Zombie(randomX(325,415),  230,  "left"   , platform4.x, platform4.xw);
 
     new Controller(player);
         
@@ -64,26 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
         
         fastZom();
         //need to refactor
-        zombie.moveZombie();
-        zombie.drawZombie(ctx);
+        // zombie.moveZombie();
+        // zombie.drawZombie(ctx);
         
         zombie1.moveZombie();
         zombie1.drawZombie(ctx);
 
-        zombie2.moveZombie();
-        zombie2.drawZombie(ctx);
+        // zombie2.moveZombie();
+        // zombie2.drawZombie(ctx);
         
         zombie3.moveZombie();
         zombie3.drawZombie(ctx);
 
-        zombie4.moveZombie();
-        zombie4.drawZombie(ctx);
+        // zombie4.moveZombie();
+        // zombie4.drawZombie(ctx);
 
         zombie5.moveZombie();
         zombie5.drawZombie(ctx);
 
-        zombie6.moveZombie();
-        zombie6.drawZombie(ctx);
+        // zombie6.moveZombie();
+        // zombie6.drawZombie(ctx);
 
         player.movePlayer();
         player.drawPlayer(ctx);
@@ -91,13 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
         drawScoreMulti()
 
         // need to refactor
-        collisionDetection(player, zombie);
+        // collisionDetection(player, zombie);
         collisionDetection(player, zombie1);
-        collisionDetection(player, zombie2);
+        // collisionDetection(player, zombie2);
         collisionDetection(player, zombie3);
-        collisionDetection(player, zombie4);
+        // collisionDetection(player, zombie4);
         collisionDetection(player, zombie5);
-        collisionDetection(player, zombie6);
+        // collisionDetection(player, zombie6);
         collisionDetection(player, item1);
         collisionDetection(player, item2);
         collisionDetection(player, platform1); 
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 obj1.y < obj2.y + obj2.height &&
                 obj1.y + obj1.height > obj2.y 
             ){
-                // gameOver();
+                gameOver();
              }
         }
 
@@ -218,13 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function fastZom(){
         if(zomFrames == 1000){
             // startZombie.speed += 0.01;
-            zombie.speed      += 0.01;
+            // zombie.speed      += 0.01;
             zombie1.speed     += 0.01;
-            zombie2.speed     += 0.01;
+            // zombie2.speed     += 0.01;
             zombie3.speed     += 0.01;
-            zombie4.speed     += 0.01;
+            // zombie4.speed     += 0.01;
             zombie5.speed     += 0.01;
-            zombie6.speed     += 0.01;
+            // zombie6.speed     += 0.01;
             zomFrames = 0;
         }else{
             zomFrames++;
@@ -247,9 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // random calculation
-    function randomSpeed(){
-        return Math.random();
-    }
+    // function randomSpeed(){
+    //     return Math.random();
+    // }
 
     function randomX(min,max){
         return Math.random() * (max - min) + min;
