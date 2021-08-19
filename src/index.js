@@ -4,8 +4,7 @@ const Controller = require("./scripts/controller");
 const Zombie = require("./scripts/zombie");
 const Item = require("./scripts/item");
 const Background = require("./scripts/background");
-
-
+import {renderModal} from './scripts/modal';
 
 document.addEventListener("DOMContentLoaded", () => {
     let frames = 0;
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let ctx = canvas.getContext('2d');
     const canvasWidth = 1000;
     const canvasHeight = 500;
-
     let score = 0;
     let multi = 1;
     let zomFrames = 0;
@@ -21,7 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let item1 = new Item();
     let item2 = new Item();
     let background = new Background(ctx,canvasWidth, canvasHeight);
-
+    
+    // screen logic
+    let startScreen = true;
+    let ready = false;
+    
     // need to refactor
     // constructor(x,y,width,height)
     let platform1 = new Platforms(0, 470, 1000, 30);
@@ -33,28 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let platform5 = new Platforms(0, 185, 333, 5);
     let platform6 = new Platforms(666, 185, 333, 5);
-    
 
-    //  Zombie constructor            x          ,  y  ,  width, height, speed, direction, platformX  , platformXW
-    let zombie      = new Zombie(randomX(0,400)  ,  420,  50   , 50    , 1.3  , "right"  , platform1.x, platform1.xw);
-    let zombie1     = new Zombie(randomX(500,975),  420,  50   , 50    , 0.5  , "left"   , platform1.x, platform1.xw);
-    let zombie2     = new Zombie(randomX(350,975),  310,  50   , 50    , 3.2  , "left"   , platform3.x, platform3.xw);
-    let zombie3     = new Zombie(randomX(0,308)  ,  310,  50   , 50    , 0.9  , "right"  , platform2.x, platform2.xw);
-    let zombie4     = new Zombie(randomX(0,308)  ,  135,  50   , 50    , 2    , "left"   , platform5.x, platform5.xw);
-    let zombie5     = new Zombie(randomX(350,975),  135,  50   , 50    , 2    , "left"   , platform6.x, platform6.xw);
-    let zombie6     = new Zombie(randomX(325,415),  220,  50   , 50    , 2    , "left"   , platform4.x, platform4.xw);
+    //  Zombie constructor            x          ,  y  , speed, direction, platformX  , platformXW
+    let zombie      = new Zombie(randomX(0,300)  ,  430, 1.3  , "right"  , platform1.x, platform1.xw);
+    let zombie1     = new Zombie(randomX(600,975),  430, 0.5  , "left"   , platform1.x, platform1.xw);
+    let zombie2     = new Zombie(randomX(350,975),  320, 3.2  , "left"   , platform3.x, platform3.xw);
+    let zombie3     = new Zombie(randomX(0,308)  ,  320, 0.9  , "right"  , platform2.x, platform2.xw);
+    let zombie4     = new Zombie(randomX(0,308)  ,  145, 2    , "left"   , platform5.x, platform5.xw);
+    let zombie5     = new Zombie(randomX(350,975),  145, 2    , "left"   , platform6.x, platform6.xw);
+    let zombie6     = new Zombie(randomX(325,415),  230, 2    , "left"   , platform4.x, platform4.xw);
 
     new Controller(player);
-    
-    requestAnimationFrame(loop);
-    
+        
     function loop(){
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         randomBg();
 
         item1.drawItem(ctx);
         item2.drawItem(ctx);
-    
 
         //need to refactor
         platform1.drawPlatforms(ctx);
@@ -122,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 obj1.y < obj2.y + obj2.height &&
                 obj1.y + obj1.height > obj2.y 
             ){
-                //  gameOver();
+                gameOver();
              }
         }
 
@@ -178,24 +176,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //drawing function
     function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
-        ctx.fillText("Score: "+score, 8, 20);
+        ctx.fillStyle = "white";
+        ctx.fillText("Score: "+score, 30, 20);
     }
 
     function drawMulti() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
-        ctx.fillText("Mulitplier: "+multi.toFixed(2) +"x", 8, 40);
+        ctx.fillStyle = "white";
+        ctx.fillText("Mulitplier: "+multi.toFixed(2) +"x", 55, 40);
     }
 
-    function gameOver(){
-        alert('game over');
-        document.location.reload();
-        clearInterval(interval);
-    }
-
+    // scoring
     function incScore(num){
         score += Math.round(num * multi);
     }
@@ -204,8 +198,27 @@ document.addEventListener("DOMContentLoaded", () => {
         multi += num;
     }
 
+    // game start / end logic
+    function gameOver(){
+        ctx.clearRect(0,0,canvasWidth,canvasHeight);
+        alert("Game Over! Your score was " +score);
+        document.location.reload();
+        clearInterval(interval);
+        ready = false;
+        startScreen = true;
+        
+    }
+
+    function start(){// if 
+        ready = true;
+        startScreen = false;
+        requestAnimationFrame(loop);
+    }
+
+
+    // game logic
     function fastZom(){
-        if(zomFrames == 500){
+        if(zomFrames == 1000){
             // startZombie.speed += 0.01;
             zombie.speed      += randomSpeed();
             zombie1.speed     += randomSpeed();
@@ -221,12 +234,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function slowZom(){
         // startZombie.speed -= 0.01;
-        zombie.speed      -= 0.25;
-        zombie1.speed     -= 0.25;
-        zombie2.speed     -= 0.25;
-        zombie3.speed     -= 0.25;
-        zombie4.speed     -= 0.25;
-        zombie5.speed     -= 0.25;
+        zombie.speed      -= 0.50;
+        zombie1.speed     -= 0.50;
+        zombie2.speed     -= 0.50;
+        zombie3.speed     -= 0.50;
+        zombie4.speed     -= 0.50;
+        zombie5.speed     -= 0.50;
     }
 
     function itemRespawn(item){
@@ -234,6 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.randomizePower();
     }
 
+    // random calculation
     function randomSpeed(){
         return Math.random();
     }
@@ -252,6 +266,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (frames > 2000){
             frames = 0;
         }
-        console.log(frames);
     }
+
+    document.addEventListener('keydown', (e) =>{
+        switch(e.keyCode){
+            case 13: // enter
+            if(!ready){
+                start(); // breaking
+            }
+            break;
+        }
+    });
+
+    renderModal(ctx, canvasWidth, ready, startScreen);    
 });

@@ -11,12 +11,13 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li>PLayers must avoid touching the zombies</li>
     <li>Zombies movement speed will increase over time, making your run much more difficult.</li>
     <br>
-    <span>In addition, this project will include:</span>
-    <li>A production README</li>
+
 </ul>
 <!-- <img src = "wire.png" style ="height: 500px; width:1024px;"> -->
 
 <ul>
+    <span>In addition, this project will include:</span>
+    <li>A production README</li>
     <li>Nav links to the project's Github repo, and others.</li>
     <li>Game Controls used will be shown</li>
     <li>Cheat sheet for items and their rewards</li>
@@ -29,7 +30,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li>Assets:</li>
     <ul>
         <li>Zombie sprite asset from: 
-            <a href=https://www.vhv.rs/viewpic/bxwRi_pixel-zombie-sprite-sheet-hd-png-download/'>link</a>
+            <a href='https://www.vhv.rs/viewpic/bxwRi_pixel-zombie-sprite-sheet-hd-png-download'>link</a>
         </li>
         <li>Item sprite asset from Emma Mrou: 
             <a href='https://www.pinterest.fr/pin/446560119286334934/'>link</a>

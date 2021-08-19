@@ -1,10 +1,10 @@
 class Zombie {
     // zombie object to create
-    constructor(x,y,width,height,speed,direction,platformX,platformXW){ 
+    constructor(x,y,speed,direction,platformX,platformXW){ 
         
         // 
-        this.width = width;
-        this.height = height;
+        this.width = 40;
+        this.height = 40;
         
         this.zombieImg = new Image();
         this.zombieImg.src = 'src/images/zombie.png';
