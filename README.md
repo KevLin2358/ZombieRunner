@@ -1,5 +1,7 @@
 <h2>Background</h2>
-<a href="https://kevlin2358.github.io/ZombieRunner/"> Live Site </a>
+
+<h3><a href="https://kevlin2358.github.io/ZombieRunner/"> Live Site </a></h3>
+
 This is a 2D platformer where the player trying to rack up points while avoiding zombies. The player will get to move and jump to avoid zombies while also trying to get items.
 <ol>
     <li> If the player touches the zombie, the player will lose.</li>
