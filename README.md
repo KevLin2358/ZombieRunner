@@ -2,11 +2,11 @@
 
 <p>Table of Contents</p>
 <ul>
-    <a href="background"><li>Background</li></a>
-    <a id="functionality"><li>Functionality & MVPs</li></a>
-    <a id=""><li>Technologies, Libraries, APIs</li></a>
-    <a id=""><li>Code Snippet</li></a>
-    <a id=""><li>Implementation Timeline</li></a>
+    <a href="#background"><li>Background</li></a>
+    <a href="#functionality"><li>Functionality & MVPs</li></a>
+    <a href="#technologies"><li>Technologies, Libraries, APIs</li></a>
+    <a href="#code-snippet"><li>Code Snippet</li></a>
+    <a href="#timeline"><li>Implementation Timeline</li></a>
 </ul>
 
 <h2 id="background">Background</h2>
@@ -34,7 +34,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li>Game Controls used will be shown</li>
 </ul>
 
-<h2>Technologies, Libraries, APIs</h2>
+<h2 id="technologies">Technologies, Libraries, APIs</h2>
 <ul>
     <li>Canvas API to render the game</li>
     <li>Webpack to bundle and transpile the source JavaScript code</li>
@@ -54,9 +54,11 @@ This is a 2D platformer where the player trying to rack up points while avoiding
         <li>Attribution 4.0 International (CC BY 4.0)<a href='https://creativecommons.org/licenses/by/4.0/'>link</a></li>
     </ul>
 </ul>
-<h2>Code Snippet</h2>
-
-<h2>Implementation Timeline</h2>
+<h2 id="code-snippet">Code Snippet</h2>
+    <img src="Screen Shot 2021-12-13 at 3.02.31 PM.png"/>
+    <p>Randomizing items spawn position, item sprite and effects.</p>
+    <p>Every time the player collects an item, the item will respawn.</p>
+<h2 id="timeline">Implementation Timeline</h2>
 <ul>
     <h3>Friday Afternoon and Weekend: </h3>
     <li>Get the canvas up and running. Start getting the game logic in place for character movement and zombie movement.</li>
