@@ -1,6 +1,15 @@
-<h2>Background</h2>
+<h1>ZombieRunner</h1>
+By Kevin Lin - Visit <a href="https://kevlin2358.github.io/ZombieRunner/"> ZombieRunner </a>
 
-<h3><a href="https://kevlin2358.github.io/ZombieRunner/"> Live Site </a></h3>
+<ol>
+    <span>Table of Contents</span>
+    <li>Background</li>
+    <li>Technologies, Libraries, APIs</li>
+    <li>Code Snippet</li>
+    <li>Implementation Timeline</li>
+</ol>
+
+<h2>Background</h2>
 
 This is a 2D platformer where the player trying to rack up points while avoiding zombies. The player will get to move and jump to avoid zombies while also trying to get items.
 <ol>
@@ -44,7 +53,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
         <li>Attribution 4.0 International (CC BY 4.0)<a href='https://creativecommons.org/licenses/by/4.0/'>link</a></li>
     </ul>
 </ul>
-
+<h2>Code Snippet</h2>
 
 <h2>Implementation Timeline</h2>
 <ul>
@@ -58,14 +67,4 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li>If I finished styling the game, I can start implementing power ups to make the gameplay more fun.</li>
     <h3>Thursday Morning:</h3>
     <li>Deploy to Github pages.</li>
-</ul>
-
-<h2>Bonus Features</h2>
-<ul>
-    <span>Some anticipated features are: </span>
-    <li>Every time the run is over, the score will be calculated into currency.</li>
-    <li>The currency is used to improve skills or get boosts that will help them in their future runs.</li>
-    <li>Better map design</li>
-    <li>more diverse powerups</li>
-    <li>player and zombie sprite animation</li>
 </ul>
