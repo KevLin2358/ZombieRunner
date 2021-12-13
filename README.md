@@ -2,14 +2,14 @@
 
 <p>Table of Contents</p>
 <ul>
-    <li>Background</li>
-    <li>Functionality & MVPs</li>
-    <li>Technologies, Libraries, APIs</li>
-    <li>Code Snippet</li>
-    <li>Implementation Timeline</li>
+    <a href="background"><li>Background</li></a>
+    <a id="functionality"><li>Functionality & MVPs</li></a>
+    <a id=""><li>Technologies, Libraries, APIs</li></a>
+    <a id=""><li>Code Snippet</li></a>
+    <a id=""><li>Implementation Timeline</li></a>
 </ul>
 
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 
 This is a 2D platformer where the player trying to rack up points while avoiding zombies. The player will get to move and jump to avoid zombies while also trying to get items.
 <ol>
@@ -17,7 +17,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li> The zombie horde will be constantly moving around.</li>
 </ol>
 
-<h2>Functionality & MVPs</h2>
+<h2 id="functionality">Functionality & MVPs</h2>
 <ul>
     <li>Players are able to control the character with A, D and spacebar</li>
     <li>Players are able to collect items to increase score / multiplier</li>
@@ -69,3 +69,4 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <h3>Thursday Morning:</h3>
     <li>Deploy to Github pages.</li>
 </ul>
+
