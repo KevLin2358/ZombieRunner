@@ -3,6 +3,7 @@
 <p>Table of Contents</p>
 <ul>
     <li>Background</li>
+    <li>Functionality & MVPs</li>
     <li>Technologies, Libraries, APIs</li>
     <li>Code Snippet</li>
     <li>Implementation Timeline</li>
@@ -15,6 +16,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     <li> If the player touches the zombie, the player will lose.</li>
     <li> The zombie horde will be constantly moving around.</li>
 </ol>
+
 <h2>Functionality & MVPs</h2>
 <ul>
     <li>Players are able to control the character with A, D and spacebar</li>
