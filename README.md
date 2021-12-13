@@ -1,8 +1,8 @@
 <h1>ZombieRunner</h1>
 By Kevin Lin - Visit <a href="https://kevlin2358.github.io/ZombieRunner/"> ZombieRunner </a>
 
-<p>Table of Contents</p>
 <ul>
+    <p>Table of Contents</p>
     <li>Background</li>
     <li>Technologies, Libraries, APIs</li>
     <li>Code Snippet</li>
