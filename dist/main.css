@@ -75,6 +75,8 @@ body {
 
 h1 {
   text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .title {
@@ -84,7 +86,7 @@ h1 {
 
 .link-bar {
   padding-left: 5px;
-  padding-top: 25px;
+  padding-top: 50px;
   text-align: center;
 }
 
