@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  min-width: 1440;
   line-height: 1;
 }
 
@@ -56,7 +57,6 @@ table {
 }
 
 body {
-  min-height: auto;
   background-color: #8fb526;
 }
 
@@ -65,31 +65,85 @@ body {
 }
 
 #canvas1 {
-  border: 5px solid black;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1000px;
-  height: 500px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
-h1 {
+.zombie-title {
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.title {
-  padding-bottom: 20px;
-  width: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .link-bar {
-  padding-left: 5px;
-  padding-top: 50px;
+  padding-top: 75px;
   text-align: center;
+  width: 100%;
 }
 
 .link-bar a {
   padding-left: 10px;
+}
+
+.control-instruction-main{
+  float:left;
+  width: 14%;
+  height: 500px;
+}
+
+.control-instruction-header{
+  height: 50px;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.control-instruction{
+  text-align: center;
+  height: 100px;
+}
+
+.item_instruction{
+  float:right;
+  width: 14%;
+  height: 500px;
+}
+
+.item-instruction-header{
+  height: 50px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.item-instruction{
+  height: 70px;
+}
+
+.item-instruction img{
+  margin-top: 20px;
+}
+
+.game{
+  border: black 5px solid;
+  height: 500px;
+}
+
+@media only screen and (max-width: 1401px) { 
+  .item_instruction { 
+    display: none; 
+  } 
+  .control-instruction-main { 
+    display: none; 
+  } 
+  .game{
+    border: none;
+  }
+  #canvas1{
+    border: 5px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+  
 }
