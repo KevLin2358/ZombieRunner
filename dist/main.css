@@ -33,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  min-width: 1440;
+
   line-height: 1;
 }
 
@@ -58,6 +58,7 @@ table {
 
 body {
   background-color: #8fb526;
+  width: 100%;
 }
 
 .body-page {
@@ -65,8 +66,7 @@ body {
 }
 
 #canvas1 {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border: 2px black solid;
 }
 
 .zombie-title {
@@ -78,7 +78,6 @@ body {
 .link-bar {
   padding-top: 75px;
   text-align: center;
-  width: 100%;
 }
 
 .link-bar a {
@@ -87,7 +86,7 @@ body {
 
 .control-instruction-main{
   float:left;
-  width: 14%;
+  width: 15%;
   height: 500px;
 }
 
@@ -105,7 +104,7 @@ body {
 
 .item_instruction{
   float:right;
-  width: 14%;
+  width: 15%;
   height: 500px;
 }
 
@@ -123,8 +122,18 @@ body {
   margin-top: 20px;
 }
 
+.item-instruction span{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+
 .game{
-  border: black 5px solid;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 1440px;
   height: 500px;
 }
 
@@ -145,5 +154,5 @@ body {
     margin-right: auto;
     width: 1000px;
   }
-  
+
 }
