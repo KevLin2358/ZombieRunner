@@ -154,5 +154,11 @@ body {
     margin-right: auto;
     width: 1000px;
   }
+  .zombie-title{
+    width: 1440px;
+  }
 
+  .link-bar{
+    width: 1440px;
+  }
 }
