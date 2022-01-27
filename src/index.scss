@@ -49,41 +49,109 @@ table {
 
 
 // css
-
-body{
-    min-height: auto;
-    background-color: rgb(143, 181, 38);
-}
-
-.body-page{
+body {
+    background-color: #8fb526;
+    width: 100%;
+  }
+  
+  .body-page {
     padding-top: 100px;
-
-}
-
-#canvas1{
-    border: 5px solid black;
-    display: block;
+  }
+  
+  #canvas1 {
+    border: 2px black solid;
+  }
+  
+  .zombie-title {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .link-bar {
+    padding-top: 75px;
+    text-align: center;
+  }
+  
+  .link-bar a {
+    padding-left: 10px;
+  }
+  
+  .control-instruction-main{
+    float:left;
+    width: 15%;
+    height: 500px;
+  }
+  
+  .control-instruction-header{
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .control-instruction{
+    text-align: center;
+    height: 100px;
+  }
+  
+  .item_instruction{
+    float:right;
+    width: 15%;
+    height: 500px;
+  }
+  
+  .item-instruction-header{
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  .item-instruction{
+    height: 70px;
+  }
+  
+  .item-instruction img{
+    margin-top: 20px;
+  }
+  
+  .item-instruction span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    margin-bottom: 50px;
+  }
+  
+  .game{
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+  
+    width: 1440px;
     height: 500px;
-}
-
-h1 {
-    text-align: center;
-}
-
-.title{
-    padding-bottom: 20px;
-    width: 500px;
-}
-
-.link-bar{
-    padding-left: 5px;
-    padding-top: 25px;
-    text-align: center;
-}
-
-.link-bar a{
-    padding-left: 10px;
-}
+  }
+  
+  @media only screen and (max-width: 1401px) { 
+    .item_instruction { 
+      display: none; 
+    } 
+    .control-instruction-main { 
+      display: none; 
+    } 
+    .game{
+      border: none;
+    }
+    #canvas1{
+      border: 5px solid black;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 1000px;
+    }
+    .zombie-title{
+      width: 1440px;
+    }
+  
+    .link-bar{
+      width: 1440px;
+    }
+  }
