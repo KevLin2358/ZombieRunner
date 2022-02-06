@@ -33,7 +33,6 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-
   line-height: 1;
 }
 
@@ -57,7 +56,7 @@ table {
 }
 
 body {
-  background-color: #8fb526;
+  background-image: url("/src/images/brickwall.jpeg");
   width: 100%;
 }
 
@@ -67,6 +66,7 @@ body {
 
 #canvas1 {
   border: 2px black solid;
+  background-color: #8fb526;
 }
 
 .zombie-title {
@@ -76,7 +76,7 @@ body {
 }
 
 .link-bar {
-  padding-top: 75px;
+  margin-top: 75px;
   text-align: center;
 }
 
@@ -84,81 +84,149 @@ body {
   padding-left: 10px;
 }
 
-.control-instruction-main{
-  float:left;
-  width: 15%;
-  height: 500px;
+.link-bar a img {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.control-instruction-header{
+.control-instruction-main {
+  float: left;
+  width: 15%;
+  height: 500px;
+  background-color: white;
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.control-instruction-header {
   height: 50px;
   font-size: 50px;
   text-align: center;
   margin-bottom: 50px;
 }
 
-.control-instruction{
+.control-instruction {
   text-align: center;
   height: 100px;
 }
 
-.item_instruction{
-  float:right;
+.item_instruction {
+  float: right;
   width: 15%;
   height: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
 }
 
-.item-instruction-header{
+.item-instruction-header {
   height: 50px;
   font-size: 50px;
   text-align: center;
 }
 
-.item-instruction{
+.item-instruction {
   height: 70px;
 }
 
-.item-instruction img{
+.item-instruction img {
   margin-top: 20px;
 }
 
-.item-instruction span{
+.item-instruction span {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
   margin-bottom: 50px;
 }
 
-.game{
+.game {
   margin-left: auto;
   margin-right: auto;
-
   width: 1440px;
   height: 500px;
 }
 
-@media only screen and (max-width: 1401px) { 
-  .item_instruction { 
-    display: none; 
-  } 
-  .control-instruction-main { 
-    display: none; 
-  } 
-  .game{
+.game2 {
+  display: none;
+}
+
+.item-instruction2 {
+  display: none;
+}
+
+@media only screen and (max-width: 1401px) {
+  .item_instruction {
+    display: none;
+  }
+
+  .control-instruction-main {
+    display: none;
+  }
+
+  .game {
     border: none;
   }
-  #canvas1{
+
+  #canvas1 {
     border: 5px solid black;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 1000px;
   }
-  .zombie-title{
+
+  .zombie-title {
     width: 1440px;
   }
 
-  .link-bar{
+  .link-bar {
+    padding-top: 0;
     width: 1440px;
+  }
+
+  .game2 {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .control-instruction-main2 {
+    display: inline-block;
+    margin-left: 20%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .item-instruction2 {
+    display: flex;
+  }
+
+  .item_instruction2 {
+    padding-top: 5px;
+    margin-left: 5%;
+    margin-right: 15%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .item-instruction2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .item-instruction2 {
+    margin-bottom: 5px;
+  }
+
+  .item-instruction2 img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .item-instruction-header2 {
+    font-size: 25px;
+    padding-bottom: 15px;
+  }
+
+  .control-instruction-header2 {
+    font-size: 25px;
   }
 }
