@@ -9,6 +9,8 @@
     <a href="#timeline"><li>Implementation Timeline</li></a>
 </ul>
 
+<img src="img.png"/> 
+
 <h2 id="background">Background</h2>
 
 This is a 2D platformer where the player trying to rack up points while avoiding zombies. The player will get to move and jump to avoid zombies while also trying to get items.
