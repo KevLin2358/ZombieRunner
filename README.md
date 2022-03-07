@@ -56,7 +56,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
 </ul>
 <h2 id="code-snippet">Code Snippet</h2>
 
-    ```
+    ```javascript
     randomizePower(){
         let ranNum = Math.floor(Math.random() * (this.items.length));
         this.randomItem = this.items[ranNum];
