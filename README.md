@@ -55,8 +55,9 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     </ul>
 </ul>
 <h2 id="code-snippet">Code Snippet</h2>
-    ````    
-    
+
+    ```    
+
         randomizePower(){
             let ranNum = Math.floor(Math.random() * (this.items.length));
             this.randomItem = this.items[ranNum];
@@ -79,7 +80,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
                 this.x, this.y, this.width, this.height);
         }   
 
-    ````
+    ```
 <p>Randomizing items spawn position, item sprite and effects.</p>
 <p>Every time the player collects an item, the item will respawn.</p>
 <h2 id="timeline">Implementation Timeline</h2>
