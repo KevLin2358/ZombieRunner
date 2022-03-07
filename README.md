@@ -55,6 +55,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     </ul>
 </ul>
 <h2 id="code-snippet">Code Snippet</h2>
+
     ```    
 
         randomizePower(){
@@ -80,6 +81,7 @@ This is a 2D platformer where the player trying to rack up points while avoiding
         }   
 
     ```
+    
 <p>Randomizing items spawn position, item sprite and effects.</p>
 <p>Every time the player collects an item, the item will respawn.</p>
 <h2 id="timeline">Implementation Timeline</h2>
