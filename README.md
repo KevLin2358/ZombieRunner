@@ -55,31 +55,28 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     </ul>
 </ul>
 <h2 id="code-snippet">Code Snippet</h2>
-    <p>
-    ```
-        randomizePower(){
-        let ranNum = Math.floor(Math.random() * (this.items.length));
-        this.randomItem = this.items[ranNum];
-        this.name = this.randomItem.name;
-        this.itemX = this.randomItem.x;
-        this.itemY = this.randomItem.y;
-    }
-    randomizeSpawn(){
-        let xh = xWidth;
-        let yh = yHeight;
-        let ranX = Math.floor(Math.random() * (xh.length));
-        let ranY = Math.floor(Math.random() * (yh.length));
-        this.x = xh[ranX]
-        this.y = yh[ranY];
-    }
+    ```     randomizePower(){
+                let ranNum = Math.floor(Math.random() * (this.items.length));
+                this.randomItem = this.items[ranNum];
+                this.name = this.randomItem.name;
+                this.itemX = this.randomItem.x;
+                this.itemY = this.randomItem.y;
+            }
+            randomizeSpawn(){
+                let xh = xWidth;
+                let yh = yHeight;
+                let ranX = Math.floor(Math.random() * (xh.length));
+                let ranY = Math.floor(Math.random() * (yh.length));
+                this.x = xh[ranX]
+                this.y = yh[ranY];
+            }
 
-    drawItem(ctx){
-        ctx.drawImage(this.itemImg, 
-            this.itemX, this.itemY, this.imageWidth, this.imageHeight, 
-            this.x, this.y, this.width, this.height);
-    }
+            drawItem(ctx){
+                ctx.drawImage(this.itemImg, 
+                    this.itemX, this.itemY, this.imageWidth, this.imageHeight, 
+                    this.x, this.y, this.width, this.height);
+            }   
     ```
-    </p>
     <p>Randomizing items spawn position, item sprite and effects.</p>
     <p>Every time the player collects an item, the item will respawn.</p>
 <h2 id="timeline">Implementation Timeline</h2>
