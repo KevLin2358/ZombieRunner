@@ -55,7 +55,6 @@ This is a 2D platformer where the player trying to rack up points while avoiding
     </ul>
 </ul>
 <h2 id="code-snippet">Code Snippet</h2>
-
     ```    
 
         randomizePower(){
